@@ -1,69 +1,127 @@
 <!DOCTYPE html>
 <html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Med Spa Pipeline</title>
+<title>Marinexis Pipeline Dashboard</title>
 <style>
   :root {
-    --bg:#f6f7f9; --card:#fff; --ink:#15181d; --muted:#6b7280; --line:#e5e7eb;
-    --accent:#2f6f4e; --accent-soft:#e6f0ea; --warn:#b45309;
+    --bg:#f9f9f7; --card:#fcfcfb; --ink:#0b0b0b; --muted:#52514e; --faint:#898781; --line:#e1e0d9;
+    --series-1:#2a78d6; --series-2:#eb6834; --series-3:#1baf7a; --series-4:#eda100;
+    --status-good:#0ca30c; --status-warning:#fab219; --status-serious:#ec835a; --status-critical:#d03b3b;
+    --card-soft:#eef4fc;
   }
-  :root:not([data-theme="light"]) { }
   @media (prefers-color-scheme: dark) {
     :root:not([data-theme="light"]) {
-      --bg:#0f1115; --card:#171a20; --ink:#e8eaed; --muted:#9aa2ae; --line:#272b33;
-      --accent:#5fbf8e; --accent-soft:#1b2c24; --warn:#d9a441;
+      --bg:#0d0d0d; --card:#1a1a19; --ink:#ffffff; --muted:#c3c2b7; --faint:#898781; --line:#2c2c2a;
+      --series-1:#3987e5; --series-2:#d95926; --series-3:#199e70; --series-4:#c98500;
+      --status-good:#0ca30c; --status-warning:#fab219; --status-serious:#ec835a; --status-critical:#d03b3b;
+      --card-soft:#182233;
     }
   }
   :root[data-theme="dark"] {
-    --bg:#0f1115; --card:#171a20; --ink:#e8eaed; --muted:#9aa2ae; --line:#272b33;
-    --accent:#5fbf8e; --accent-soft:#1b2c24; --warn:#d9a441;
+    --bg:#0d0d0d; --card:#1a1a19; --ink:#ffffff; --muted:#c3c2b7; --faint:#898781; --line:#2c2c2a;
+    --series-1:#3987e5; --series-2:#d95926; --series-3:#199e70; --series-4:#c98500;
+    --status-good:#0ca30c; --status-warning:#fab219; --status-serious:#ec835a; --status-critical:#d03b3b;
+    --card-soft:#182233;
   }
   * { box-sizing:border-box; }
-  body { margin:0; background:var(--bg); color:var(--ink); font:15px/1.5 -apple-system,BlinkMacSystemFont,
-        "Segoe UI",Roboto,Helvetica,Arial,sans-serif; padding:32px 16px 64px; }
-  .wrap { max-width:1000px; margin:0 auto; }
+  body { margin:0; background:var(--bg); color:var(--ink); font:15px/1.5 system-ui,-apple-system,"Segoe UI",
+        Roboto,Helvetica,Arial,sans-serif; padding:32px 16px 64px; }
+  .wrap { max-width:1100px; margin:0 auto; }
   h1 { font-size:24px; margin:0 0 4px; letter-spacing:-.01em; }
   h2 { font-size:15px; margin:0 0 14px; font-weight:600; }
   .sub { color:var(--muted); font-size:13px; margin-bottom:24px; }
-  .grid { display:grid; gap:12px; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); margin-bottom:24px; }
+  .grid { display:grid; gap:12px; grid-template-columns:repeat(auto-fit,minmax(160px,1fr)); margin-bottom:24px; }
   .card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:16px; }
-  .kpi .v { font-size:28px; font-weight:650; letter-spacing:-.02em; }
+  .kpi .v { font-size:28px; font-weight:650; letter-spacing:-.02em; font-variant-numeric:proportional-nums; }
   .kpi .l { color:var(--muted); font-size:12px; text-transform:uppercase; letter-spacing:.05em; margin-top:2px; }
-  .kpi .h { color:var(--muted); font-size:12px; margin-top:6px; }
-  .accent .v { color:var(--accent); }
+  .kpi .h { color:var(--faint); font-size:12px; margin-top:6px; }
+  .kpi.good .v { color:var(--status-good); }
+  .kpi.warn .v { color:var(--status-warning); }
+  .kpi.crit .v { color:var(--status-critical); }
+  .kpi.accent .v { color:var(--series-1); }
   .panel { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:20px; margin-bottom:16px; }
-  .chart { display:flex; align-items:flex-end; gap:8px; height:160px; }
+  .panel .note { color:var(--muted); font-size:12px; margin-top:8px; }
+  .chart { display:flex; align-items:flex-end; gap:8px; height:170px; }
   .bar { flex:1; display:flex; flex-direction:column; justify-content:flex-end; align-items:center; height:100%; }
-  .bar-fill { width:100%; background:var(--accent); border-radius:4px 4px 0 0; min-height:3px; }
-  .bar-n { font-size:11px; color:var(--muted); margin-top:4px; }
-  .bar-d { font-size:10px; color:var(--muted); }
+  .bar-track { position:relative; width:100%; display:flex; align-items:flex-end; }
+  .bar-fill { width:100%; border-radius:4px 4px 0 0; min-height:3px; }
+  .bar-target { position:absolute; left:0; right:0; border-top:2px dashed var(--faint); }
+  .bar-n { font-size:11px; color:var(--muted); margin-top:4px; font-variant-numeric:tabular-nums; }
+  .bar-d { font-size:10px; color:var(--faint); }
   table { width:100%; border-collapse:collapse; font-size:14px; }
   th { text-align:left; font-size:11px; text-transform:uppercase; letter-spacing:.05em;
-       color:var(--muted); font-weight:600; padding:0 8px 8px 0; border-bottom:1px solid var(--line); }
+       color:var(--faint); font-weight:600; padding:0 8px 8px 0; border-bottom:1px solid var(--line); }
   td { padding:8px 8px 8px 0; border-bottom:1px solid var(--line); }
   td.num { font-variant-numeric:tabular-nums; }
-  .mini { height:8px; background:var(--accent-soft); border:1px solid var(--accent); border-radius:4px; }
+  .mini { height:8px; background:var(--card-soft); border:1px solid var(--series-1); border-radius:4px; }
   .muted { color:var(--muted); }
   .two { display:grid; gap:16px; grid-template-columns:1fr 1fr; }
   @media (max-width:720px) { .two { grid-template-columns:1fr; } }
+  .funnel-row { display:grid; grid-template-columns:200px 1fr 60px; align-items:center; gap:12px; margin-bottom:10px; }
+  .funnel-label { font-size:13px; color:var(--muted); }
+  .funnel-track { background:var(--card-soft); border-radius:6px; height:22px; overflow:hidden; }
+  .funnel-fill { height:100%; background:var(--series-1); border-radius:6px; }
+  .funnel-n { font-size:13px; font-weight:600; text-align:right; font-variant-numeric:tabular-nums; }
+  .hbar-row { display:grid; grid-template-columns:1fr 3fr 36px; align-items:center; gap:10px; margin-bottom:7px; }
+  .hbar-label { font-size:12px; color:var(--muted); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+  .hbar-track { background:var(--card-soft); border-radius:4px; height:14px; overflow:hidden; }
+  .hbar-fill { height:100%; border-radius:4px; }
+  .hbar-n { font-size:12px; text-align:right; font-variant-numeric:tabular-nums; color:var(--muted); }
+  .pill { display:inline-flex; align-items:center; gap:6px; font-size:12px; padding:3px 9px; border-radius:999px;
+          border:1px solid var(--line); margin:2px 6px 2px 0; }
+  .dot { width:8px; height:8px; border-radius:50%; display:inline-block; }
+  .legend { margin-top:10px; }
 </style></head><body><div class="wrap">
 
-<h1>Med spa pipeline</h1>
-<div class="sub">Marinexis Biologics &middot; refreshed 2026-09-16 23:36 UTC</div>
+<h1>Marinexis Biologics &middot; pipeline dashboard</h1>
+<div class="sub">Med spa outreach campaign &middot; refreshed 2026-09-16 23:53 UTC</div>
 
 <div class="grid">
-  <div class="card kpi"><div class="v">0</div><div class="l">Emailed</div>
-    <div class="h">0 today</div></div>
-  <div class="card kpi accent"><div class="v">0</div><div class="l">Replied</div>
-    <div class="h">0.0% of sends</div></div>
-  <div class="card kpi"><div class="v">0</div><div class="l">Bounced</div>
-    <div class="h">0 unsubscribed</div></div>
+  <div class="card kpi"><div class="v">2</div><div class="l">Candidates found</div>
+    <div class="h">2 scraped so far</div></div>
   <div class="card kpi"><div class="v">429</div><div class="l">Queue left</div>
-    <div class="h">verified, not yet emailed</div></div>
+    <div class="h">qualified, not yet emailed</div></div>
+  <div class="card kpi accent"><div class="v">0</div><div class="l">Emailed</div>
+    <div class="h">0 today &middot; cap 20/day</div></div>
+  <div class="card kpi good"><div class="v">0</div><div class="l">Replied</div>
+    <div class="h">0.0% of sends</div></div>
+  <div class="card kpi warn"><div class="v">0</div><div class="l">Bounced</div>
+    <div class="h">0.0% &middot; 0 unsubscribed</div></div>
+  <div class="card kpi"><div class="v">575</div><div class="l">Do-not-contact</div>
+    <div class="h">permanently suppressed</div></div>
 </div>
 
-<div class="panel"><h2>Sends per day (last 14 active days)</h2>
-  <div class="chart"><p class="muted">No sends yet.</p></div></div>
+<div class="panel">
+  <h2>Pipeline funnel</h2>
+  <div class="funnel-row"><div class="funnel-label">Candidates found</div><div class="funnel-track"><div class="funnel-fill" style="width:100%"></div></div><div class="funnel-n">2</div></div><div class="funnel-row"><div class="funnel-label">Sites scraped</div><div class="funnel-track"><div class="funnel-fill" style="width:100%"></div></div><div class="funnel-n">2</div></div><div class="funnel-row"><div class="funnel-label">Qualified (in queue or emailed)</div><div class="funnel-track"><div class="funnel-fill" style="width:100%"></div></div><div class="funnel-n">2</div></div><div class="funnel-row"><div class="funnel-label">Emailed</div><div class="funnel-track"><div class="funnel-fill" style="width:0%"></div></div><div class="funnel-n">0</div></div><div class="funnel-row"><div class="funnel-label">Replied</div><div class="funnel-track"><div class="funnel-fill" style="width:0%"></div></div><div class="funnel-n">0</div></div>
+  <div class="note">Each stage as a share of candidates found. "Qualified" = a real contact email, a peptide
+    mention, and a US signal -- the gates <code>medspa/build_queue.py</code> enforces before anyone reaches the
+    send queue.</div>
+</div>
+
+<div class="panel">
+  <h2>Daily scrape volume vs. 500/day target</h2>
+  <div class="chart"><p class="muted">No daily_scrape.py runs logged yet -- run <code>python3 daily_scrape.py</code>.</p></div>
+  <div class="note">
+    <span class="pill"><span class="dot" style="background:var(--status-good)"></span>target met</span>
+    <span class="pill"><span class="dot" style="background:var(--status-warning)"></span>below target</span>
+    &middot; dashed line = that day's target &middot; 0/0 logged days on target &middot;
+    0 sites scraped in the last 30 logged runs
+  </div>
+</div>
+
+<div class="two">
+  <div class="panel"><h2>Sends per day (last 14 active days)</h2>
+    <div class="chart"><p class="muted">No sends yet.</p></div></div>
+  <div class="panel"><h2>Discovery sweep progress</h2>
+    <div class="funnel-row" style="grid-template-columns:1fr 60px;">
+      <div class="funnel-track"><div class="funnel-fill" style="width:0%;background:var(--series-3)">
+      </div></div><div class="funnel-n">0%</div></div>
+    <div class="note">Sweep 1 through every city &times; peptide-keyword query combination
+      (3234 total). Position wraps back to 0 once a sweep finishes, so
+      <code>daily_scrape.py</code> never runs dry -- it just starts the next sweep.</div>
+  </div>
+</div>
 
 <div class="two">
   <div class="panel"><h2>Queue by state</h2>
@@ -72,6 +130,19 @@
   <div class="panel"><h2>Replies</h2>
     <table><thead><tr><th>Practice</th><th>Address</th><th>Last touch</th></tr></thead>
     <tbody><tr><td colspan="3" class="muted">No replies yet.</td></tr></tbody></table></div>
+</div>
+
+<div class="two">
+  <div class="panel"><h2>Scrape outcome (every candidate visited)</h2>
+    <div class="hbar-row"><div class="hbar-label">Qualified contact found</div><div class="hbar-track"><div class="hbar-fill" style="width:100%;background:var(--series-1)"></div></div><div class="hbar-n">2</div></div>
+    <div class="note">2 sites crawled total. A "no usable email" or "blocked by robots.txt" result
+      never reaches the send queue -- see <code>medspa/build_queue.py</code>'s gates.</div>
+  </div>
+  <div class="panel"><h2>Top peptide keywords found on-site</h2>
+    <div class="hbar-row"><div class="hbar-label">semaglutide</div><div class="hbar-track"><div class="hbar-fill" style="width:100%;background:var(--series-3)"></div></div><div class="hbar-n">2</div></div><div class="hbar-row"><div class="hbar-label">tirzepatide</div><div class="hbar-track"><div class="hbar-fill" style="width:100%;background:var(--series-3)"></div></div><div class="hbar-n">2</div></div><div class="hbar-row"><div class="hbar-label">sermorelin</div><div class="hbar-track"><div class="hbar-fill" style="width:100%;background:var(--series-3)"></div></div><div class="hbar-n">2</div></div><div class="hbar-row"><div class="hbar-label">nad+</div><div class="hbar-track"><div class="hbar-fill" style="width:100%;background:var(--series-3)"></div></div><div class="hbar-n">2</div></div><div class="hbar-row"><div class="hbar-label">bpc-157</div><div class="hbar-track"><div class="hbar-fill" style="width:50%;background:var(--series-3)"></div></div><div class="hbar-n">1</div></div><div class="hbar-row"><div class="hbar-label">glutathione</div><div class="hbar-track"><div class="hbar-fill" style="width:50%;background:var(--series-3)"></div></div><div class="hbar-n">1</div></div><div class="hbar-row"><div class="hbar-label">ipamorelin</div><div class="hbar-track"><div class="hbar-fill" style="width:50%;background:var(--series-3)"></div></div><div class="hbar-n">1</div></div><div class="hbar-row"><div class="hbar-label">tesamorelin</div><div class="hbar-track"><div class="hbar-fill" style="width:50%;background:var(--series-3)"></div></div><div class="hbar-n">1</div></div>
+    <div class="note">Counted from <code>medspa/peptide_terms.txt</code> hits on crawled sites -- this is also
+      what <code>daily_scrape.py</code> turns into search queries per city.</div>
+  </div>
 </div>
 
 </div></body></html>

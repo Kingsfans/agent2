@@ -109,6 +109,25 @@ that has proven stable.
 
 ## The two jobs
 
+### 0. Daily scrape target — `python3 daily_scrape.py`
+
+Runs discovery + enrichment + queue promotion + dashboard refresh as one job,
+targeting a minimum number of med spa sites *scraped* (crawled for contact info)
+per day -- `DAILY_SCRAPE_TARGET` in `.env`, 500 by default. It cycles through
+every city x peptide-keyword combination (`medspa/cities.txt` x
+`medspa/peptide_terms.txt`) and wraps back to the start once it's worked through
+all of them, so it never runs dry. This is scraping volume, not sending volume:
+raising it does not raise `DAILY_CAP`. Needs a search API key to run unattended
+(e.g. from a cron job or GitHub Action); without one it still enriches/promotes
+whatever `medspa/discover.py add` has already collected via Claude web search.
+
+```bash
+python3 daily_scrape.py                # target from .env
+python3 daily_scrape.py --target 750 --max-queries 200
+```
+
+Logs one row per run to `outreach/scrape_log.csv`, which the dashboard charts.
+
 ### 1. Find med spas — `/find-medspas`
 
 Three steps, and the first one has two paths depending on whether a search API
@@ -155,18 +174,23 @@ outreach/
   medspa_queue.csv     verified med spas not yet contacted  (429 seeded)
   sent_log.csv         one row per med spa emailed: when, stage, status
   do_not_contact.csv   never email these  (575 seeded from Jonathan's campaign)
+  scrape_log.csv       one row per daily_scrape.py run: target vs actual scraped
   contacted.csv        \
   replied.csv           |  written by `serve_send.py export`
   bounced.csv           |
   not_yet_emailed.csv  /
-  dash_update.py       refresh the HTML dashboard from sent_log.csv
+  dash_update.py       refresh the HTML dashboard from every CSV above
+
+daily_scrape.py        one command: discover + enrich + promote + refresh dashboard,
+                        targeting DAILY_SCRAPE_TARGET sites/day
 
 medspa/
-  discover.py          search -> candidates.csv
-  enrich.py            crawl candidates -> enriched.csv
+  discover.py          search -> candidates.csv (cities x peptide keywords, cycles forever)
+  enrich.py            crawl candidates -> enriched.csv (robots.txt-aware, rate-limited)
   build_queue.py       enriched.csv -> medspa_queue.csv (with quality gates)
   cities.txt           metros to work through
-  peptide_terms.txt    what qualifies a practice, and what the email quotes
+  peptide_terms.txt    what qualifies a practice, what the email quotes, and what
+                        daily_scrape.py turns into search queries
 
 emailer/
   message_medspa.txt   the opening email

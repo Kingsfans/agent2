@@ -9,7 +9,9 @@ __pycache__/
 *.py[cod]
 .DS_Store
 
-# Note: medspa/candidates.csv, medspa/enriched.csv and outreach/*.csv ARE
-# committed on purpose. They are this agent's entire memory -- who has been
-# found, who has been emailed, who replied. A fresh container with an empty
-# sent_log will happily email everyone a second time.
+# Note: medspa/candidates.csv, medspa/enriched.csv, medspa/.query_progress and
+# outreach/*.csv (including scrape_log.csv) ARE committed on purpose. They are
+# this agent's entire memory -- who has been found, who has been emailed, who
+# replied, and where the daily discovery sweep left off. A fresh container
+# with an empty sent_log will happily email everyone a second time, and one
+# with no .query_progress will restart the sweep at the first city.

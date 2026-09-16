@@ -47,13 +47,33 @@ AGGREGATORS = {
 }
 SKIP_SUFFIX = (".gov", ".edu", ".mil")
 
-QUERY_TEMPLATES = [
+GENERIC_TEMPLATES = [
     'medical spa peptide therapy "{city}, {state}"',
     '"med spa" semaglutide OR tirzepatide "{city}, {state}"',
     'wellness clinic peptide injections "{city}, {state}"',
     'aesthetics clinic "BPC-157" OR "ipamorelin" "{city}, {state}"',
     '"{city}" {state} medspa hormone optimization peptides contact',
 ]
+PEPTIDE_TERMS_FILE = HERE / "peptide_terms.txt"
+
+
+def peptide_terms():
+    if not PEPTIDE_TERMS_FILE.exists():
+        return []
+    return [t.strip() for t in PEPTIDE_TERMS_FILE.read_text(encoding="utf-8").splitlines()
+            if t.strip() and not t.startswith("#")]
+
+
+def keyword_templates():
+    """One query template per tracked peptide/compound, so the daily scrape volume
+    scales with medspa/peptide_terms.txt -- add a compound there and it gets its own
+    search angle in every city, no code change needed."""
+    return ['med spa OR "medical spa" OR "wellness clinic" "{kw}" "{{city}}, {{state}}"'.format(kw=t)
+            for t in peptide_terms()]
+
+
+def all_templates():
+    return GENERIC_TEMPLATES + keyword_templates()
 
 
 # ---------- candidate store ---------------------------------------------------
@@ -159,31 +179,39 @@ def cities():
 
 
 def plan(n):
-    """Next n queries, walking cities x templates and remembering where we stopped."""
+    """Next n queries, walking cities x templates (generic angles + one per tracked
+    peptide keyword). The position counter grows forever and wraps via modulo when
+    picking a city/template -- so a daily job never "runs out" of queries, it just
+    starts a fresh sweep through the same keyword list. `raw` (the position stored
+    across runs) keeps increasing; `raw // total` is which sweep you're on."""
     pairs = cities()
+    templates = all_templates()
     if not pairs:
         sys.exit("medspa/cities.txt is empty -- add 'City, ST' lines first.")
+    total = len(pairs) * len(templates)
     start = int(PROGRESS.read_text().strip()) if PROGRESS.exists() else 0
-    total = len(pairs) * len(QUERY_TEMPLATES)
     out = []
-    for i in range(start, min(start + n, total)):
-        city, state = pairs[i // len(QUERY_TEMPLATES)]
-        tpl = QUERY_TEMPLATES[i % len(QUERY_TEMPLATES)]
-        out.append((i, tpl.format(city=city, state=state), city, state))
+    for k in range(n):
+        raw = start + k
+        i = raw % total
+        city, state = pairs[i // len(templates)]
+        tpl = templates[i % len(templates)]
+        out.append((raw, tpl.format(city=city, state=state), city, state))
     return out, total
 
 
-def advance(to_index):
-    PROGRESS.write_text(str(to_index))
+def advance(to_position):
+    PROGRESS.write_text(str(to_position))
 
 
 # ---------- commands ----------------------------------------------------------
 def cmd_plan(n):
     items, total = plan(n)
     if not items:
-        print("plan: all queries used. Add more cities to medspa/cities.txt or reset medspa/.query_progress")
+        print("plan: nothing to do -- check medspa/cities.txt")
         return
-    print(f"# {len(items)} queries (position {items[0][0]}..{items[-1][0]} of {total})")
+    sweep = items[0][0] // total + 1
+    print(f"# {len(items)} queries (position {items[0][0]}..{items[-1][0]} of {total}, sweep {sweep})")
     for _, q, city, state in items:
         print(q)
 

@@ -92,6 +92,33 @@ To keep it going by itself, ask Claude to set up a recurring task ("run an
 outreach wave every hour between 9am and 5pm on weekdays"). It will keep sending
 and reporting without you.
 
+### Scrape a full day's worth — `daily_scrape.py`
+
+> Run the daily scrape.
+
+One command that discovers, crawls and qualifies med spas until it's scraped at
+least `DAILY_SCRAPE_TARGET` sites (**500 by default**), cycling through every
+city in `medspa/cities.txt` crossed with every compound in
+`medspa/peptide_terms.txt` for its search queries. It never runs out — once a
+full sweep finishes it just starts the next one. This is scraping volume, not
+email volume: it never changes `DAILY_CAP`, so it can't make the campaign send
+faster, only keep its queue deeper.
+
+```bash
+python3 daily_scrape.py                  # target from .env, default 500
+python3 daily_scrape.py --target 750
+```
+
+Needs a search API key (Serper, Brave, or Google CSE) in `.env` to find brand
+new candidates on its own. Without one it still crawls and promotes whatever is
+already in `medspa/candidates.csv`.
+
+**Runs automatically once a day** via `.github/workflows/daily-scrape.yml` once
+this repo is on GitHub with the workflow merged to the default branch — add a
+`SERPER_API_KEY` (or `BRAVE_SEARCH_API_KEY` / `GOOGLE_CSE_API_KEY`+`GOOGLE_CSE_CX`)
+repository secret so it can discover unattended, and it commits its results back
+every run. Trigger it by hand anytime from the Actions tab ("Run workflow").
+
 ### Find more med spas — `/find-medspas`
 
 > Find some more med spas.
@@ -130,7 +157,9 @@ Everything the agent knows is in plain CSV files you can open in a spreadsheet.
 | `outreach/medspa_queue.csv` | Med spas found and verified, not yet emailed |
 | `outreach/sent_log.csv` | One row per practice emailed: when, which step, what happened |
 | `outreach/do_not_contact.csv` | Never email these. Grows automatically. |
-| `exports/lead_pipeline_tracker.html` | The dashboard. Open it in any browser. |
+| `outreach/scrape_log.csv` | One row per `daily_scrape.py` run: target vs. actual sites scraped |
+| `medspa/.query_progress` | Where the discovery sweep left off, so it resumes instead of restarting |
+| `exports/lead_pipeline_tracker.html` | The dashboard: funnel, daily scrape volume vs. target, sends, replies, keyword coverage. Open it in any browser. |
 | `emailer/message_medspa.txt` | The opening email. Edit here to change the pitch. |
 | `emailer/followup_medspa.txt` | The three follow-ups |
 

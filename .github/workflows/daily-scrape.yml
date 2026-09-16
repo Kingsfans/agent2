@@ -1,0 +1,82 @@
+name: Daily med spa scrape
+
+# Runs the discovery half of the pipeline (medspa/discover.py + enrich.py +
+# build_queue.py via daily_scrape.py) once a day, targeting DAILY_SCRAPE_TARGET
+# real site crawls. This is discovery volume only -- it never touches
+# DAILY_CAP/HOURLY_CAP, so it cannot make the agent send more email; it just
+# keeps the send queue stocked with qualified med spas for outreach/serve_send.py
+# to work through at its own safe pace.
+#
+# Scheduled workflows only fire from the repository's default branch, so this
+# won't run on a feature branch until merged. Use "Run workflow" in the Actions
+# tab (workflow_dispatch, below) to test it before that.
+#
+# Needs at least one search API key as a repository secret to discover NEW
+# candidates unattended (SERPER_API_KEY is the simplest -- https://serper.dev/).
+# Without one, this job still crawls and promotes whatever is already queued in
+# medspa/candidates.csv, but can't find fresh ones on its own.
+
+on:
+  schedule:
+    # 13:00 UTC = 6am Pacific / 9am Eastern, so a fresh queue is ready before
+    # the workday's outreach waves start.
+    - cron: "0 13 * * *"
+  workflow_dispatch:
+    inputs:
+      target:
+        description: "Minimum sites to scrape today"
+        required: false
+        default: "500"
+      dry_run:
+        description: "Discover + enrich only, skip promoting to the send queue"
+        type: boolean
+        required: false
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: daily-scrape
+  cancel-in-progress: false
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    # Up to ~8 page fetches per candidate site, some of which time out rather
+    # than fail fast -- generous headroom for a several-hundred-site run.
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Run daily scrape
+        env:
+          SERPER_API_KEY: ${{ secrets.SERPER_API_KEY }}
+          BRAVE_SEARCH_API_KEY: ${{ secrets.BRAVE_SEARCH_API_KEY }}
+          GOOGLE_CSE_API_KEY: ${{ secrets.GOOGLE_CSE_API_KEY }}
+          GOOGLE_CSE_CX: ${{ secrets.GOOGLE_CSE_CX }}
+          TARGET: ${{ github.event.inputs.target || vars.DAILY_SCRAPE_TARGET || '500' }}
+          MAX_QUERIES: ${{ vars.MAX_QUERIES_PER_DAY || '150' }}
+        run: |
+          ARGS="--target ${TARGET} --max-queries ${MAX_QUERIES}"
+          if [ "${{ github.event.inputs.dry_run }}" = "true" ]; then
+            ARGS="$ARGS --dry-run"
+          fi
+          python3 daily_scrape.py $ARGS
+
+      - name: Commit and push results
+        run: |
+          git config user.name "marinexis-scrape-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add medspa/candidates.csv medspa/enriched.csv medspa/.query_progress \
+                  outreach/medspa_queue.csv outreach/scrape_log.csv exports/lead_pipeline_tracker.html
+          if git diff --cached --quiet; then
+            echo "no state changes to commit"
+          else
+            git commit -m "Daily scrape: automated discovery run ($(date -u +%Y-%m-%d))"
+            git push
+          fi

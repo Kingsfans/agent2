@@ -15,7 +15,7 @@ home page plus the likeliest contact pages, then records:
 Results land in medspa/enriched.csv. Sites that block crawlers or publish no
 address are recorded with status "no_email" and simply never reach the queue.
 """
-import csv, re, socket, ssl, sys, urllib.error, urllib.parse, urllib.request
+import csv, os, re, socket, ssl, sys, time, urllib.error, urllib.parse, urllib.request, urllib.robotparser
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -31,6 +31,36 @@ UA = "Mozilla/5.0 (compatible; MarinexisLeadBot/1.0; +https://marinexisbiologics
 TIMEOUT = 15
 CONTACT_PATHS = ["", "/contact", "/contact-us", "/contact.html", "/about", "/about-us",
                  "/services", "/peptides", "/peptide-therapy", "/book", "/appointments"]
+# Pause between *domains* (not between paths on the same domain) so a batch of
+# hundreds of sites doesn't look like a hammering script to any one host.
+CRAWL_DELAY_SECONDS = float(os.environ.get("CRAWL_DELAY_SECONDS", "0.5"))
+
+_robots_cache = {}
+
+
+def robots_allows(url):
+    """Best-effort robots.txt check, cached per host. A site with no robots.txt,
+    or one we can't fetch, is treated as allow-all -- the same default every
+    browser and most crawlers use."""
+    parsed = urllib.parse.urlparse(url)
+    base = f"{parsed.scheme}://{parsed.netloc}"
+    rp = _robots_cache.get(base)
+    if rp is None:
+        rp = urllib.robotparser.RobotFileParser()
+        try:
+            req = urllib.request.Request(base + "/robots.txt", headers={"User-Agent": UA})
+            ctx = ssl.create_default_context()
+            ctx.check_hostname = False
+            ctx.verify_mode = ssl.CERT_NONE
+            with urllib.request.urlopen(req, timeout=TIMEOUT, context=ctx) as r:
+                rp.parse(r.read(200_000).decode("utf-8", "replace").splitlines())
+        except Exception:
+            rp.parse([])
+        _robots_cache[base] = rp
+    try:
+        return rp.can_fetch(UA, url)
+    except Exception:
+        return True
 
 EMAIL_RE = re.compile(r"[A-Za-z0-9._%+\-]+@[A-Za-z0-9.\-]+\.[A-Za-z]{2,}")
 # addresses that exist on pages but are never a person: assets, vendors, examples
@@ -100,10 +130,14 @@ def enrich_one(domain, seed_url=""):
     row["checked_at"] = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
     row["url"] = seed_url or f"https://{domain}/"
     base = f"https://{domain}"
-    emails, blob, title, ok = [], "", "", False
+    emails, blob, title, ok, any_allowed = [], "", "", False, False
     for path in CONTACT_PATHS:
+        url = base + path
+        if not robots_allows(url):
+            continue
+        any_allowed = True
         try:
-            html = fetch(base + path)
+            html = fetch(url)
         except (urllib.error.URLError, urllib.error.HTTPError, socket.timeout, ssl.SSLError, ValueError, OSError):
             continue
         except Exception:
@@ -118,7 +152,7 @@ def enrich_one(domain, seed_url=""):
         if emails and len(blob) > 20_000:
             break
     if not ok:
-        row["status"] = "unreachable"
+        row["status"] = "robots_disallowed" if not any_allowed else "unreachable"
         return row
 
     row["business_name"] = title
@@ -168,9 +202,11 @@ def main(limit=None, recheck=False):
         todo = todo[:limit]
     if not todo:
         print(f"nothing to do (candidates={len(cands)}, enriched={len(done)})")
-        return
+        return 0
     print(f"enriching {len(todo)} of {len(cands)} candidates...")
     for i, d in enumerate(todo, 1):
+        if i > 1 and CRAWL_DELAY_SECONDS > 0:
+            time.sleep(CRAWL_DELAY_SECONDS)
         row = enrich_one(d, cands[d].get("url", ""))
         if not row["business_name"]:
             row["business_name"] = cands[d].get("business_name", "")
@@ -185,6 +221,7 @@ def main(limit=None, recheck=False):
     from collections import Counter
     print("status:", dict(Counter(r["status"] for r in done.values())))
     print(f"wrote {ENR}")
+    return len(todo)
 
 
 if __name__ == "__main__":

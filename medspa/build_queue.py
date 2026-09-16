@@ -88,10 +88,10 @@ def main(apply=False):
 
     if not apply:
         print("\n(dry run -- re-run with --apply to append these to outreach/medspa_queue.csv)")
-        return
+        return len(add)
     if not add:
         print("nothing to add")
-        return
+        return 0
     with open(QUEUE, "a", newline="", encoding="utf-8") as f:
         w = csv.DictWriter(f, fieldnames=QCOLS)
         if not queue:
@@ -99,6 +99,7 @@ def main(apply=False):
         for r in add:
             w.writerow(r)
     print(f"\nappended {len(add)} -> {QUEUE} (queue now {len(queue) + len(add)})")
+    return len(add)
 
 
 if __name__ == "__main__":
