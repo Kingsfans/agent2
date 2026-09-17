@@ -1,0 +1,2 @@
+date,started_at,finished_at,target,queries_run,candidates_before,candidates_after,new_candidates,sites_enriched,queue_before,queue_after,qualified_added,met_target
+2026-09-17,2026-09-17T21:39:38Z,2026-09-17T21:39:38Z,500,0,2,2,0,0,429,429,0,no

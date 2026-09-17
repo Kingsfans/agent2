@@ -74,10 +74,10 @@
 </style></head><body><div class="wrap">
 
 <h1>Marinexis Biologics &middot; pipeline dashboard</h1>
-<div class="sub">Med spa outreach campaign &middot; refreshed 2026-09-16 23:53 UTC</div>
+<div class="sub">Med spa outreach campaign &middot; refreshed 2026-09-17 21:41 UTC</div>
 
 <div class="grid">
-  <div class="card kpi"><div class="v">2</div><div class="l">Candidates found</div>
+  <div class="card kpi"><div class="v">10</div><div class="l">Candidates found</div>
     <div class="h">2 scraped so far</div></div>
   <div class="card kpi"><div class="v">429</div><div class="l">Queue left</div>
     <div class="h">qualified, not yet emailed</div></div>
@@ -93,7 +93,7 @@
 
 <div class="panel">
   <h2>Pipeline funnel</h2>
-  <div class="funnel-row"><div class="funnel-label">Candidates found</div><div class="funnel-track"><div class="funnel-fill" style="width:100%"></div></div><div class="funnel-n">2</div></div><div class="funnel-row"><div class="funnel-label">Sites scraped</div><div class="funnel-track"><div class="funnel-fill" style="width:100%"></div></div><div class="funnel-n">2</div></div><div class="funnel-row"><div class="funnel-label">Qualified (in queue or emailed)</div><div class="funnel-track"><div class="funnel-fill" style="width:100%"></div></div><div class="funnel-n">2</div></div><div class="funnel-row"><div class="funnel-label">Emailed</div><div class="funnel-track"><div class="funnel-fill" style="width:0%"></div></div><div class="funnel-n">0</div></div><div class="funnel-row"><div class="funnel-label">Replied</div><div class="funnel-track"><div class="funnel-fill" style="width:0%"></div></div><div class="funnel-n">0</div></div>
+  <div class="funnel-row"><div class="funnel-label">Candidates found</div><div class="funnel-track"><div class="funnel-fill" style="width:100%"></div></div><div class="funnel-n">10</div></div><div class="funnel-row"><div class="funnel-label">Sites scraped</div><div class="funnel-track"><div class="funnel-fill" style="width:20%"></div></div><div class="funnel-n">2</div></div><div class="funnel-row"><div class="funnel-label">Qualified (in queue or emailed)</div><div class="funnel-track"><div class="funnel-fill" style="width:20%"></div></div><div class="funnel-n">2</div></div><div class="funnel-row"><div class="funnel-label">Emailed</div><div class="funnel-track"><div class="funnel-fill" style="width:0%"></div></div><div class="funnel-n">0</div></div><div class="funnel-row"><div class="funnel-label">Replied</div><div class="funnel-track"><div class="funnel-fill" style="width:0%"></div></div><div class="funnel-n">0</div></div>
   <div class="note">Each stage as a share of candidates found. "Qualified" = a real contact email, a peptide
     mention, and a US signal -- the gates <code>medspa/build_queue.py</code> enforces before anyone reaches the
     send queue.</div>
@@ -101,11 +101,11 @@
 
 <div class="panel">
   <h2>Daily scrape volume vs. 500/day target</h2>
-  <div class="chart"><p class="muted">No daily_scrape.py runs logged yet -- run <code>python3 daily_scrape.py</code>.</p></div>
+  <div class="chart"><div class="bar"><div class="bar-track" style="height:100%"><div class="bar-target" style="bottom:100%"></div><div class="bar-fill" style="height:0%;background:var(--status-warning)" title="0 scraped, target 500"></div></div><div class="bar-n">0</div><div class="bar-d">09-17</div></div></div>
   <div class="note">
     <span class="pill"><span class="dot" style="background:var(--status-good)"></span>target met</span>
     <span class="pill"><span class="dot" style="background:var(--status-warning)"></span>below target</span>
-    &middot; dashed line = that day's target &middot; 0/0 logged days on target &middot;
+    &middot; dashed line = that day's target &middot; 0/1 logged days on target &middot;
     0 sites scraped in the last 30 logged runs
   </div>
 </div>
