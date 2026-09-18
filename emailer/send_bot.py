@@ -47,10 +47,30 @@ FATAL = ("quota", "rate", "limit", "blocked", "suspended", "too many", "try agai
 SEND_DELAY = float(ss.cfg("SEND_DELAY_SECONDS", "6"))
 
 
-def build_wave(n):
+def matches(row, where):
+    """Geography filter for a queue row: --where NV or --where "las vegas".
+
+    A two-letter term is treated as a state code and matched exactly against the
+    state column only. Substring-matching it against the city would quietly pull
+    in DeNVer and JacksoNVille -- a filter that looks like it works while mailing
+    the wrong market is worse than no filter."""
+    if not where:
+        return True
+    where = where.strip().lower()
+    state = (row.get("state") or "").strip().lower()
+    if len(where) == 2:
+        return where == state
+    return where in (row.get("city") or "").lower() or where == state
+
+
+def build_wave(n, where=""):
     """The next n messages to go out: follow-ups that are due first, then new
     prospects. Mirrors serve_send.cmd_next, but in-process so nothing has to
-    round-trip through a JSON file."""
+    round-trip through a JSON file.
+
+    `where` narrows new prospects to one city or state -- useful for working a
+    metro at a time. Follow-ups are never filtered: someone already contacted is
+    owed the rest of their sequence regardless of which market you're working."""
     rows = ss.load_sent()
     sd = ss.sender()
     queue_index = {r["email"].strip().lower(): r for r in ss.load_queue()}
@@ -74,6 +94,8 @@ def build_wave(n):
     for r in ss.initial_candidates(rows):
         if len(items) >= n:
             break
+        if not matches(r, where):
+            continue
         addr = r["email"].strip().lower()
         name = ss.display_name(r.get("business_name", ""), addr.split("@", 1)[1])
         peps = (r.get("peptides") or "peptides").strip()
@@ -138,13 +160,14 @@ def is_fatal(err):
     return any(marker in text for marker in FATAL)
 
 
-def main(mode, count, delay):
-    items, budget = build_wave(count)
+def main(mode, count, delay, where=""):
+    items, budget = build_wave(count, where)
     validate(items)
 
     n_fu = sum(1 for i in items if i["kind"] == "fu")
+    scope = f", where={where!r}" if where else ""
     print(f"WAVE {len(items)}  followups={n_fu} new={len(items) - n_fu}  "
-          f"(budget_left_today={budget}, daily_cap={ss.DAILY_CAP}, hourly_cap={ss.HOURLY_CAP})")
+          f"(budget_left_today={budget}, daily_cap={ss.DAILY_CAP}, hourly_cap={ss.HOURLY_CAP}{scope})")
     for i, it in enumerate(items, 1):
         kind = f"FU{it['stage']}" if it["kind"] == "fu" else "INIT"
         where = f"{it['city']}, {it['state']}".strip(", ") or "-"
@@ -206,6 +229,9 @@ if __name__ == "__main__":
     g.add_argument("--send", action="store_true", help="actually send the wave")
     p.add_argument("--limit", type=int, default=ss.HOURLY_CAP, help="cap this wave (default HOURLY_CAP)")
     p.add_argument("--delay", type=float, default=SEND_DELAY, help="seconds between messages")
+    p.add_argument("--where", default="", metavar="CITY|ST",
+                   help='only new prospects in this city or state, e.g. --where "Las Vegas" or --where NV')
     args = p.parse_args()
 
-    main("drafted" if args.drafts else "sent" if args.send else "dry", args.limit, args.delay)
+    main("drafted" if args.drafts else "sent" if args.send else "dry",
+         args.limit, args.delay, args.where)
