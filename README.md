@@ -80,6 +80,36 @@ If it reports a queue of 429 and zero sent, you are ready.
 Two commands, both built in as skills. You type them to Claude in plain English
 or as a slash command.
 
+### Let the bot run it — `run_campaign.py`
+
+Everything above, hands-off, with no Claude in the loop. The bot reaches your
+mailbox directly over IMAP/SMTP, so it runs from cron or GitHub Actions.
+
+**Setup:** create a Gmail app password at
+[myaccount.google.com/apppasswords](https://myaccount.google.com/apppasswords)
+(2-Step Verification has to be on first), put it in `.env` as
+`GMAIL_APP_PASSWORD`, then:
+
+```bash
+python3 emailer/mailbox.py              # confirms it can log in. Sends nothing.
+python3 emailer/send_bot.py --drafts    # writes real drafts into your Gmail
+python3 emailer/send_bot.py --send      # sends
+python3 run_campaign.py --send --commit # inbox sync + scrape + wave + dashboard
+```
+
+**Run it in `--drafts` for the first day.** The drafts land in your Gmail Drafts
+folder; read a few before you let it send anything. They're recorded as
+contacted either way, so nobody gets queued twice.
+
+It also reads the inbox by itself now (`emailer/inbox_sync.py`): replies stop
+the follow-up sequence, bounces and anyone asking to stop go onto the
+do-not-contact list permanently. That was the last step that needed a person.
+
+`.github/workflows/outreach-wave.yml` runs a wave hourly, 9–5 on weekdays, once
+you add `SENDER_NAME`, `SENDER_EMAIL` and `GMAIL_APP_PASSWORD` as repository
+secrets. It defaults to drafts mode until you set the `WAVE_MODE` variable to
+`send`.
+
 ### Send a batch — `/outreach-wave`
 
 > Run an outreach wave.

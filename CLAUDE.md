@@ -164,6 +164,34 @@ python3 outreach/dash_update.py
 git add -A && git commit -m "Outreach wave: +10 sent" && git push
 ```
 
+### 3. Or let the bot do it — `run_campaign.py`
+
+The same wave, without Claude in the loop. The bot talks to the mailbox
+directly over IMAP/SMTP (one Gmail app password, `GMAIL_APP_PASSWORD` in
+`.env`), so it can run from cron or a GitHub Action.
+
+```bash
+python3 emailer/mailbox.py                  # verify credentials, sends nothing
+python3 emailer/inbox_sync.py --apply       # mark replies/bounces/opt-outs
+python3 emailer/send_bot.py --drafts        # real Gmail drafts for review
+python3 emailer/send_bot.py --send          # send for real
+python3 run_campaign.py --send --commit     # all of it, plus scrape + dashboard
+```
+
+`send_bot.py` records each message in `sent_log.csv` the instant it leaves --
+one at a time, not batched -- so a crash mid-wave never turns into a duplicate
+send. It stops the entire wave on the first quota/block error rather than
+retrying into a throttle.
+
+**Start in `--drafts` for a day.** Read what it wrote in Gmail before you let it
+send. Drafted messages are recorded as contacted, so they will not be queued
+twice; send them from Gmail or delete them.
+
+The bot enforces the same hard rules as everything else: do-not-contact
+suppression, the caps, the cadence, and the CAN-SPAM footer rendered from the
+templates. Those are not switches. Volume is controlled by `DAILY_CAP` /
+`HOURLY_CAP` in `.env`, which is yours to set.
+
 ---
 
 ## File map
@@ -192,9 +220,14 @@ medspa/
   peptide_terms.txt    what qualifies a practice, what the email quotes, and what
                         daily_scrape.py turns into search queries
 
+run_campaign.py        the whole loop: inbox sync + scrape + wave + dashboard + commit
+
 emailer/
   message_medspa.txt   the opening email
   followup_medspa.txt  follow-ups 1-3 (the stage line changes per step)
+  mailbox.py           IMAP/SMTP access: drafts, sending, inbox scanning (stdlib)
+  send_bot.py          the autonomous sender: build, deliver, record one at a time
+  inbox_sync.py        reads the inbox, marks replies/bounces/opt-outs by itself
 
 exports/
   lead_pipeline_tracker.html   dashboard, refreshed each wave

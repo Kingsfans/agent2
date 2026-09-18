@@ -23,6 +23,7 @@ import enrich  # noqa: E402
 
 OUT = ROOT / "exports" / "lead_pipeline_tracker.html"
 SCRAPE_LOG = ROOT / "outreach" / "scrape_log.csv"
+BOT_LOG = ROOT / "outreach" / "bot_log.csv"
 
 
 def read(path):
@@ -156,6 +157,53 @@ def main():
     except SystemExit:
         sweep_total = pos = sweep_n = sweep_pct = 0
 
+    # ---- outreach bot: delivery mode, run history, cadence --------------------
+    bot_runs = read(BOT_LOG)
+    delivery = Counter(r.get("mode") or "sent" for r in sent_rows)
+    n_drafted = delivery.get("drafted", 0)
+    n_sent_live = n_emailed - n_drafted
+
+    bot_recent = bot_runs[-12:]
+    bot_peak = max([int(r.get("delivered") or 0) for r in bot_recent], default=1) or 1
+    bot_delivered_total = sum(int(r.get("delivered") or 0) for r in bot_runs)
+    bot_failed_total = sum(int(r.get("failed") or 0) for r in bot_runs)
+    last_run = bot_runs[-1]["run_at"] if bot_runs else ""
+    throttled = [r for r in bot_runs if (r.get("stopped_reason") or "").strip()]
+
+    def bot_bars():
+        if not bot_recent:
+            return ('<p class="muted">The bot has not run yet -- '
+                    '<code>python3 emailer/send_bot.py --drafts</code>.</p>')
+        out = []
+        for r in bot_recent:
+            n = int(r.get("delivered") or 0)
+            failed = int(r.get("failed") or 0)
+            pct = round(n / bot_peak * 100)
+            color = "--status-critical" if (r.get("stopped_reason") or "").strip() else (
+                "--series-2" if (r.get("mode") == "drafted") else "--series-1")
+            out.append(
+                f'<div class="bar"><div class="bar-track" style="height:100%">'
+                f'<div class="bar-fill" style="height:{pct}%;background:var({color})" '
+                f'title="{n} {esc(r.get("mode", ""))}, {failed} failed"></div></div>'
+                f'<div class="bar-n">{n}</div><div class="bar-d">{esc(r["run_at"][5:10])}</div></div>')
+        return "".join(out)
+
+    # Follow-up cadence: where every contacted practice sits in the 3-step sequence.
+    active_rows = [r for r in sent_rows if r["status"] == "active"]
+    by_stage = Counter(r["stage"] for r in active_rows)
+    due_now = len(ss.due_followups(sent_rows))
+    finished = sum(1 for r in active_rows if int(r["stage"]) >= ss.MAX_FOLLOWUPS)
+    cadence = [(f"Opener only (stage 0)", by_stage.get("0", 0)),
+               (f"Follow-up 1 sent", by_stage.get("1", 0)),
+               (f"Follow-up 2 sent", by_stage.get("2", 0)),
+               (f"Sequence complete", finished)]
+
+    # Everyone ever contacted, by outcome. Status colors, each directly labeled.
+    outcomes = [("Awaiting reply", len(active_rows), "--series-1"),
+                ("Replied", n_replied, "--status-good"),
+                ("Bounced", n_bounced, "--status-critical"),
+                ("Unsubscribed", n_unsub, "--status-warning")]
+
     # ---- replies table -------------------------------------------------------
     replied_rows = [r for r in sent_rows if r["status"] == "replied"]
 
@@ -163,7 +211,7 @@ def main():
         out = []
         for r in sorted(replied_rows, key=lambda x: x["last_touch_at"], reverse=True)[:25]:
             out.append(f'<tr><td>{esc(r["domain"])}</td><td>{esc(r["email"])}</td>'
-                       f'<td class="muted">{esc(r["last_touch_at"][:10])}</td></tr>')
+                       f'<td class="muted nowrap">{esc(r["last_touch_at"][:10])}</td></tr>')
         return "".join(out) or '<tr><td colspan="3" class="muted">No replies yet.</td></tr>'
 
     def state_rows():
@@ -235,7 +283,8 @@ def main():
        color:var(--faint); font-weight:600; padding:0 8px 8px 0; border-bottom:1px solid var(--line); }}
   td {{ padding:8px 8px 8px 0; border-bottom:1px solid var(--line); }}
   td.num {{ font-variant-numeric:tabular-nums; }}
-  .mini {{ height:8px; background:var(--card-soft); border:1px solid var(--series-1); border-radius:4px; }}
+  .mini {{ height:10px; background:var(--series-1); border-radius:3px; min-width:3px; }}
+  td.nowrap {{ white-space:nowrap; }}
   .muted {{ color:var(--muted); }}
   .two {{ display:grid; gap:16px; grid-template-columns:1fr 1fr; }}
   @media (max-width:720px) {{ .two {{ grid-template-columns:1fr; }} }}
@@ -244,8 +293,9 @@ def main():
   .funnel-track {{ background:var(--card-soft); border-radius:6px; height:22px; overflow:hidden; }}
   .funnel-fill {{ height:100%; background:var(--series-1); border-radius:6px; }}
   .funnel-n {{ font-size:13px; font-weight:600; text-align:right; font-variant-numeric:tabular-nums; }}
-  .hbar-row {{ display:grid; grid-template-columns:1fr 3fr 36px; align-items:center; gap:10px; margin-bottom:7px; }}
-  .hbar-label {{ font-size:12px; color:var(--muted); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }}
+  .hbar-row {{ display:grid; grid-template-columns:minmax(168px,auto) 1fr 44px; align-items:center;
+              gap:10px; margin-bottom:7px; }}
+  .hbar-label {{ font-size:12px; color:var(--muted); }}
   .hbar-track {{ background:var(--card-soft); border-radius:4px; height:14px; overflow:hidden; }}
   .hbar-fill {{ height:100%; border-radius:4px; }}
   .hbar-n {{ font-size:12px; text-align:right; font-variant-numeric:tabular-nums; color:var(--muted); }}
@@ -302,11 +352,48 @@ def main():
     <div class="chart">{send_bars()}</div></div>
   <div class="panel"><h2>Discovery sweep progress</h2>
     <div class="funnel-row" style="grid-template-columns:1fr 60px;">
-      <div class="funnel-track"><div class="funnel-fill" style="width:{sweep_pct}%;background:var(--series-3)">
-      </div></div><div class="funnel-n">{sweep_pct}%</div></div>
-    <div class="note">Sweep {sweep_n} through every city &times; peptide-keyword query combination
-      ({sweep_total} total). Position wraps back to 0 once a sweep finishes, so
-      <code>daily_scrape.py</code> never runs dry -- it just starts the next sweep.</div>
+      <div class="funnel-track"><div class="funnel-fill"
+        style="width:{max(sweep_pct, 1)}%;background:var(--series-3)"></div></div>
+      <div class="funnel-n">{sweep_pct}%</div></div>
+    <div class="note">Query {pos % sweep_total if sweep_total else 0} of {sweep_total}
+      in sweep {sweep_n} &mdash; every city &times; peptide-keyword combination
+      ({len(discover.cities())} cities &times; {len(discover.all_templates())} query angles).
+      Position wraps back to 0 once a sweep finishes, so <code>daily_scrape.py</code> never
+      runs dry -- it just starts the next sweep.</div>
+  </div>
+</div>
+
+<div class="panel">
+  <h2>Outreach bot &middot; delivered per run</h2>
+  <div class="chart">{bot_bars()}</div>
+  <div class="note">
+    <span class="pill"><span class="dot" style="background:var(--series-1)"></span>sent</span>
+    <span class="pill"><span class="dot" style="background:var(--series-2)"></span>drafted</span>
+    <span class="pill"><span class="dot" style="background:var(--status-critical)"></span>stopped on provider error</span>
+    &middot; {bot_delivered_total} delivered across {len(bot_runs)} runs, {bot_failed_total} failed
+    {f"&middot; last run {esc(last_run[:16].replace('T', ' '))} UTC" if last_run else ""}
+    {f"&middot; <strong>{len(throttled)} run(s) stopped early on a quota/block error</strong>" if throttled else ""}
+  </div>
+</div>
+
+<div class="two">
+  <div class="panel"><h2>Follow-up cadence</h2>
+    {bar_col(cadence, lambda x: x[1], lambda x: x[0], color_var="--series-1")}
+    <div class="note">{due_now} follow-up{"" if due_now == 1 else "s"} due right now &middot;
+      every {ss.FOLLOWUP_DAYS} days, {ss.MAX_FOLLOWUPS} at most, and never to anyone who replied,
+      bounced or opted out.</div>
+  </div>
+  <div class="panel"><h2>Outcome of everyone contacted</h2>
+    {"".join(
+      f'<div class="hbar-row"><div class="hbar-label">{esc(label)}</div>'
+      f'<div class="hbar-track"><div class="hbar-fill" '
+      f'style="width:{round(n / max(n_emailed, 1) * 100)}%;background:var({color})"></div></div>'
+      f'<div class="hbar-n">{n}</div></div>'
+      for label, n, color in outcomes
+    ) or '<p class="muted">Nobody contacted yet.</p>'}
+    <div class="note">{n_sent_live} sent live, {n_drafted} written as Gmail drafts for review.
+      Bounces and opt-outs are suppressed permanently in
+      <code>outreach/do_not_contact.csv</code>.</div>
   </div>
 </div>
 

@@ -53,7 +53,8 @@
        color:var(--faint); font-weight:600; padding:0 8px 8px 0; border-bottom:1px solid var(--line); }
   td { padding:8px 8px 8px 0; border-bottom:1px solid var(--line); }
   td.num { font-variant-numeric:tabular-nums; }
-  .mini { height:8px; background:var(--card-soft); border:1px solid var(--series-1); border-radius:4px; }
+  .mini { height:10px; background:var(--series-1); border-radius:3px; min-width:3px; }
+  td.nowrap { white-space:nowrap; }
   .muted { color:var(--muted); }
   .two { display:grid; gap:16px; grid-template-columns:1fr 1fr; }
   @media (max-width:720px) { .two { grid-template-columns:1fr; } }
@@ -62,8 +63,9 @@
   .funnel-track { background:var(--card-soft); border-radius:6px; height:22px; overflow:hidden; }
   .funnel-fill { height:100%; background:var(--series-1); border-radius:6px; }
   .funnel-n { font-size:13px; font-weight:600; text-align:right; font-variant-numeric:tabular-nums; }
-  .hbar-row { display:grid; grid-template-columns:1fr 3fr 36px; align-items:center; gap:10px; margin-bottom:7px; }
-  .hbar-label { font-size:12px; color:var(--muted); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+  .hbar-row { display:grid; grid-template-columns:minmax(168px,auto) 1fr 44px; align-items:center;
+              gap:10px; margin-bottom:7px; }
+  .hbar-label { font-size:12px; color:var(--muted); }
   .hbar-track { background:var(--card-soft); border-radius:4px; height:14px; overflow:hidden; }
   .hbar-fill { height:100%; border-radius:4px; }
   .hbar-n { font-size:12px; text-align:right; font-variant-numeric:tabular-nums; color:var(--muted); }
@@ -74,7 +76,7 @@
 </style></head><body><div class="wrap">
 
 <h1>Marinexis Biologics &middot; pipeline dashboard</h1>
-<div class="sub">Med spa outreach campaign &middot; refreshed 2026-09-17 21:41 UTC</div>
+<div class="sub">Med spa outreach campaign &middot; refreshed 2026-09-18 17:11 UTC</div>
 
 <div class="grid">
   <div class="card kpi"><div class="v">10</div><div class="l">Candidates found</div>
@@ -115,11 +117,42 @@
     <div class="chart"><p class="muted">No sends yet.</p></div></div>
   <div class="panel"><h2>Discovery sweep progress</h2>
     <div class="funnel-row" style="grid-template-columns:1fr 60px;">
-      <div class="funnel-track"><div class="funnel-fill" style="width:0%;background:var(--series-3)">
-      </div></div><div class="funnel-n">0%</div></div>
-    <div class="note">Sweep 1 through every city &times; peptide-keyword query combination
-      (3234 total). Position wraps back to 0 once a sweep finishes, so
-      <code>daily_scrape.py</code> never runs dry -- it just starts the next sweep.</div>
+      <div class="funnel-track"><div class="funnel-fill"
+        style="width:1%;background:var(--series-3)"></div></div>
+      <div class="funnel-n">0%</div></div>
+    <div class="note">Query 0 of 3234
+      in sweep 1 &mdash; every city &times; peptide-keyword combination
+      (77 cities &times; 42 query angles).
+      Position wraps back to 0 once a sweep finishes, so <code>daily_scrape.py</code> never
+      runs dry -- it just starts the next sweep.</div>
+  </div>
+</div>
+
+<div class="panel">
+  <h2>Outreach bot &middot; delivered per run</h2>
+  <div class="chart"><p class="muted">The bot has not run yet -- <code>python3 emailer/send_bot.py --drafts</code>.</p></div>
+  <div class="note">
+    <span class="pill"><span class="dot" style="background:var(--series-1)"></span>sent</span>
+    <span class="pill"><span class="dot" style="background:var(--series-2)"></span>drafted</span>
+    <span class="pill"><span class="dot" style="background:var(--status-critical)"></span>stopped on provider error</span>
+    &middot; 0 delivered across 0 runs, 0 failed
+    
+    
+  </div>
+</div>
+
+<div class="two">
+  <div class="panel"><h2>Follow-up cadence</h2>
+    <div class="hbar-row"><div class="hbar-label">Opener only (stage 0)</div><div class="hbar-track"><div class="hbar-fill" style="width:0%;background:var(--series-1)"></div></div><div class="hbar-n">0</div></div><div class="hbar-row"><div class="hbar-label">Follow-up 1 sent</div><div class="hbar-track"><div class="hbar-fill" style="width:0%;background:var(--series-1)"></div></div><div class="hbar-n">0</div></div><div class="hbar-row"><div class="hbar-label">Follow-up 2 sent</div><div class="hbar-track"><div class="hbar-fill" style="width:0%;background:var(--series-1)"></div></div><div class="hbar-n">0</div></div><div class="hbar-row"><div class="hbar-label">Sequence complete</div><div class="hbar-track"><div class="hbar-fill" style="width:0%;background:var(--series-1)"></div></div><div class="hbar-n">0</div></div>
+    <div class="note">0 follow-ups due right now &middot;
+      every 3 days, 3 at most, and never to anyone who replied,
+      bounced or opted out.</div>
+  </div>
+  <div class="panel"><h2>Outcome of everyone contacted</h2>
+    <div class="hbar-row"><div class="hbar-label">Awaiting reply</div><div class="hbar-track"><div class="hbar-fill" style="width:0%;background:var(--series-1)"></div></div><div class="hbar-n">0</div></div><div class="hbar-row"><div class="hbar-label">Replied</div><div class="hbar-track"><div class="hbar-fill" style="width:0%;background:var(--status-good)"></div></div><div class="hbar-n">0</div></div><div class="hbar-row"><div class="hbar-label">Bounced</div><div class="hbar-track"><div class="hbar-fill" style="width:0%;background:var(--status-critical)"></div></div><div class="hbar-n">0</div></div><div class="hbar-row"><div class="hbar-label">Unsubscribed</div><div class="hbar-track"><div class="hbar-fill" style="width:0%;background:var(--status-warning)"></div></div><div class="hbar-n">0</div></div>
+    <div class="note">0 sent live, 0 written as Gmail drafts for review.
+      Bounces and opt-outs are suppressed permanently in
+      <code>outreach/do_not_contact.csv</code>.</div>
   </div>
 </div>
 

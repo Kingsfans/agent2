@@ -1,0 +1,109 @@
+name: Outreach wave
+
+# One wave per hour during the workday: sync the inbox, send inside the caps,
+# record every send, refresh the dashboard, commit the state back.
+#
+# Required repository secrets:
+#   SENDER_NAME          the human the mail signs as
+#   SENDER_EMAIL         the mailbox it sends from
+#   GMAIL_APP_PASSWORD   https://myaccount.google.com/apppasswords (2FA must be on)
+#
+# Optional repository variables (Settings -> Secrets and variables -> Variables):
+#   DAILY_CAP            default 20. Raise as the mailbox earns trust: 20 -> 50 -> 100.
+#   HOURLY_CAP           default 10, i.e. messages per wave.
+#   WAVE_MODE            "send" (default) or "drafts" to stage them in Gmail for review.
+#
+# Start in drafts mode for a day. Read what it produced. Then switch to send.
+#
+# Scheduled workflows only run from the default branch, so this does nothing
+# until merged. Use "Run workflow" in the Actions tab to try it before that.
+
+on:
+  schedule:
+    # Hourly, 9am-5pm Eastern, weekdays. GitHub cron is UTC; 13-21 UTC = 9am-5pm ET.
+    - cron: "0 13-21 * * 1-5"
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "send or drafts"
+        type: choice
+        options: [drafts, send]
+        default: drafts
+      wave:
+        description: "messages this wave"
+        required: false
+        default: "10"
+
+permissions:
+  contents: write
+
+# Never let two waves overlap -- that is how the daily cap gets double-spent.
+concurrency:
+  group: outreach-wave
+  cancel-in-progress: false
+
+jobs:
+  wave:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Write .env from secrets
+        env:
+          SENDER_NAME: ${{ secrets.SENDER_NAME }}
+          SENDER_EMAIL: ${{ secrets.SENDER_EMAIL }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+          DAILY_CAP: ${{ vars.DAILY_CAP || '20' }}
+          HOURLY_CAP: ${{ vars.HOURLY_CAP || '10' }}
+          LOCAL_TZ: ${{ vars.LOCAL_TZ || 'America/Los_Angeles' }}
+        run: |
+          if [ -z "$SENDER_EMAIL" ] || [ -z "$GMAIL_APP_PASSWORD" ]; then
+            echo "::error::SENDER_EMAIL and GMAIL_APP_PASSWORD secrets are required."
+            exit 1
+          fi
+          # .env is gitignored; this file exists only inside the runner.
+          {
+            echo "SENDER_NAME=${SENDER_NAME}"
+            echo "SENDER_EMAIL=${SENDER_EMAIL}"
+            echo "GMAIL_APP_PASSWORD=${GMAIL_APP_PASSWORD}"
+            echo "DAILY_CAP=${DAILY_CAP}"
+            echo "HOURLY_CAP=${HOURLY_CAP}"
+            echo "LOCAL_TZ=${LOCAL_TZ}"
+          } > .env
+
+      - name: Sync inbox (replies, bounces, opt-outs)
+        run: python3 emailer/inbox_sync.py --apply --days 7
+
+      - name: Send the wave
+        env:
+          MODE: ${{ github.event.inputs.mode || vars.WAVE_MODE || 'send' }}
+          WAVE: ${{ github.event.inputs.wave || '10' }}
+        run: |
+          if [ "$MODE" = "drafts" ]; then
+            python3 emailer/send_bot.py --drafts --limit "$WAVE"
+          else
+            python3 emailer/send_bot.py --send --limit "$WAVE"
+          fi
+
+      - name: Refresh dashboard
+        run: python3 outreach/dash_update.py
+
+      - name: Commit campaign state
+        run: |
+          rm -f .env
+          git config user.name "marinexis-outreach-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add outreach/sent_log.csv outreach/do_not_contact.csv outreach/bot_log.csv \
+                  outreach/contacted.csv outreach/replied.csv outreach/bounced.csv \
+                  outreach/not_yet_emailed.csv exports/lead_pipeline_tracker.html
+          if git diff --cached --quiet; then
+            echo "no state changes to commit"
+          else
+            git commit -m "Outreach wave $(date -u +'%Y-%m-%d %H:%M UTC')"
+            git push
+          fi
