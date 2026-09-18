@@ -34,6 +34,12 @@ CONTACT_PATHS = ["", "/contact", "/contact-us", "/contact.html", "/about", "/abo
 # Pause between *domains* (not between paths on the same domain) so a batch of
 # hundreds of sites doesn't look like a hammering script to any one host.
 CRAWL_DELAY_SECONDS = float(os.environ.get("CRAWL_DELAY_SECONDS", "0.5"))
+# robots.txt is a convention, not a law, and whether to honor it is the
+# operator's call -- it is your crawler and your reputation. Set
+# RESPECT_ROBOTS=false in .env to fetch regardless. Note this only affects
+# which public pages get read; it has nothing to do with who may be emailed,
+# which is governed by the do-not-contact list and CAN-SPAM.
+RESPECT_ROBOTS = os.environ.get("RESPECT_ROBOTS", "true").strip().lower() not in ("false", "0", "no")
 
 _robots_cache = {}
 
@@ -42,6 +48,8 @@ def robots_allows(url):
     """Best-effort robots.txt check, cached per host. A site with no robots.txt,
     or one we can't fetch, is treated as allow-all -- the same default every
     browser and most crawlers use."""
+    if not RESPECT_ROBOTS:
+        return True
     parsed = urllib.parse.urlparse(url)
     base = f"{parsed.scheme}://{parsed.netloc}"
     rp = _robots_cache.get(base)
