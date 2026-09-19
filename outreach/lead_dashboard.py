@@ -22,7 +22,8 @@ SRC = ROOT / "exports" / "medspa_leads_master.csv"
 OUT = ROOT / "exports" / "lead_research_dashboard.html"
 
 REGION_LABELS = {"las_vegas": "Las Vegas metro", "northern_nv": "Northern Nevada",
-                 "national_va_nj_ct": "Virginia / NJ / CT"}
+                 "va_nj_ct": "Virginia / NJ / CT", "oh_pa": "Ohio / Pennsylvania",
+                 "tn_al_sc": "Tennessee / Alabama / SC", "wa_or_mn": "Washington / Oregon / Minnesota"}
 STATUS_LABELS = {"new_with_email": "New, address found", "new_no_email": "New, no address yet",
                  "already_in_queue": "Already in send queue", "do_not_contact": "Suppressed (do-not-contact)",
                  "already_contacted": "Already contacted"}
@@ -54,7 +55,10 @@ def main():
     found = [r for r in rows if r["email"]]
     tier_a = [r for r in found if r["email_tier"] == "A_verified"]
     tier_b = [r for r in found if r["email_tier"] == "B_unconfirmed"]
-    sendable = [r for r in tier_a if r["status"] == "new_with_email"]
+    # A flagged row (franchise HQ, multi-state mobile operator, not a med spa)
+    # can be perfectly real and still be the wrong practice to email.
+    flagged = [r for r in rows if r.get("flag")]
+    sendable = [r for r in tier_a if r["status"] == "new_with_email" and not r.get("flag")]
     mismatch = [r for r in found if r["domain_mismatch"]]
     hit_rate = len(found) / len(rows) * 100 if rows else 0
 
@@ -101,6 +105,8 @@ def main():
             src = (f'<a href="{esc(r["email_source"])}" target="_blank" rel="noopener">source</a>'
                    if r["email_source"] else "")
             flag = ' <span class="warn" title="address is on a different domain">&#9888;</span>' if r["domain_mismatch"] else ""
+            if r.get("flag"):
+                flag += f' <span class="pill flagged" title="{esc(r["flag"])}">{esc(r["flag"].replace("_", " "))}</span>'
             out.append(
                 f'<tr data-region="{esc(r["region"])}" data-tier="{esc(tier)}" '
                 f'data-status="{esc(r["status"])}" '
@@ -168,6 +174,8 @@ def main():
   .pill {{ display:inline-block; font-size:11px; font-weight:650; padding:2px 8px; border-radius:999px; }}
   .tier-a {{ background:var(--status-good); color:#fff; }}
   .tier-b {{ background:var(--status-warning); color:#1a1a19; }}
+  .flagged {{ background:var(--card-soft); color:var(--muted); border:1px solid var(--line);
+             font-weight:500; }}
   .warn {{ color:var(--status-warning); }}
   .filters {{ display:flex; gap:8px; flex-wrap:wrap; margin-bottom:14px; }}
   input, select {{ font:inherit; font-size:13px; padding:7px 10px; border-radius:8px;

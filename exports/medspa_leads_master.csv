@@ -1,153 +1,280 @@
-business_name,domain,website,city,state,email,email_tier,email_source,domain_mismatch,status,region
-Advanced Aesthetics Med Spa,advancedaestheticslv.com,https://advancedaestheticslv.com/,Las Vegas,NV,info@advancedaestheticslv.com,B_unconfirmed,https://advancedaestheticslv.com/contact/,,new_with_email,las_vegas
-Las Vegas Body Sculpting,lvbodysculpting.com,https://www.lvbodysculpting.com/,Las Vegas,NV,info@lvbodysculpting.com,B_unconfirmed,https://www.lvbodysculpting.com/contact/,,new_with_email,las_vegas
-Flawless MedSpa,flawlessmedspas.com,https://www.flawlessmedspas.com/,Las Vegas,NV,FlawlessMedSpas@icloud.com,A_verified,https://www.flawlessmedspas.com/contact,yes,new_with_email,las_vegas
-LURE Boutique Medical Spa,luremedicalspa.com,https://www.luremedicalspa.com/,Las Vegas,NV,info@luremedicalspa.com,B_unconfirmed,https://www.luremedicalspa.com/contact-us.php,,new_with_email,las_vegas
-Elyzium Med Spa,elyziummedspa.com,https://elyziummedspa.com/,Las Vegas,NV,info@elyziummedspa.com,B_unconfirmed,https://elyziummedspa.com/contact-us,,new_with_email,las_vegas
-NovuSkin Med Spa,novuskin.com,https://www.novuskin.com/,Las Vegas,NV,info@novuskin.com,B_unconfirmed,https://www.novuskin.com/contact-us/,,new_with_email,las_vegas
-Sinfully Beautiful,sinfully-beautiful.com,https://sinfully-beautiful.com/,Las Vegas,NV,,,,,new_no_email,las_vegas
-Medi-Slim Weight Loss & Spa,medisliminc.com,https://www.medisliminc.com/,Las Vegas,NV,,,,,new_no_email,las_vegas
-Modern Wellness Clinic,modernwellnessclinic.com,https://www.modernwellnessclinic.com/,Las Vegas,NV,info@modernwellnessclinic.com,B_unconfirmed,https://shop.modernwellnessclinic.com/contact,,new_with_email,las_vegas
-Beverly Hills Rejuvenation Center,bhrcenter.com,https://www.bhrcenter.com/,Las Vegas,NV,,,,,already_in_queue,las_vegas
-American Medical Wellness,americanmedicalwellness.com,https://www.americanmedicalwellness.com/,Las Vegas,NV,info@americanmedicalwellness.com,B_unconfirmed,https://www.americanmedicalwellness.com/contact/,,new_with_email,las_vegas
-Vitality Medical & Wellness Center,vitalitymedicalwellness.com,https://www.vitalitymedicalwellness.com/,Las Vegas,NV,Info@VitalityMedicalWellness.com,B_unconfirmed,https://www.vitalitymedicalwellness.com/contact/,,new_with_email,las_vegas
-Vital Infusions & Performance,vitalinfusionsandperformance.com,https://vitalinfusionsandperformance.com/,Las Vegas,NV,info@vitalinfusionsandperformance.com,B_unconfirmed,https://vitalinfusionsandperformance.com/contact/,,new_with_email,las_vegas
-Infuze Aesthetics & Wellness,infuzelv.com,https://www.infuzelv.com/,Las Vegas,NV,support@infuzelv.com,A_verified,https://www.infuzelv.com/,,new_with_email,las_vegas
-IV Vitamin Therapy Clinic,myvitamintherapy.com,https://www.myvitamintherapy.com/,Las Vegas,NV,Reservations@myvitamintherapy.com,A_verified,https://www.myvitamintherapy.com/contact,,new_with_email,las_vegas
-Sculpt Spa,sculptspalv.com,https://sculptspalv.com/,Las Vegas,NV,info@sculptspalv.com,B_unconfirmed,https://sculptspalv.com/contact-us/,,new_with_email,las_vegas
-Genesis Lifestyle Medicine,genesislifestylemedicine.com,https://www.genesislifestylemedicine.com/,Las Vegas,NV,contact@genesislifestylemedicine.com,B_unconfirmed,https://www.genesislifestylemedicine.com/contact/,,new_with_email,las_vegas
-Body Balance Medical,bodybalancemedical.com,https://bodybalancemedical.com/,Las Vegas,NV,,,,,already_in_queue,las_vegas
-Bright You Med Lounge,brightyoulv.com,https://www.brightyoulv.com/,Las Vegas,NV,,,,,already_in_queue,las_vegas
-Medspa-LV,medspa-lv.com,https://medspa-lv.com/,Las Vegas,NV,customer-care@medspa-lv.com,A_verified,https://medspa-lv.com/contact-us/,,new_with_email,las_vegas
-TrimBody M.D.,trimbodymd.com,https://www.trimbodymd.com/,Las Vegas,NV,trimbodymd08@gmail.com,A_verified,https://www.allbusiness.com/company-profile/trimbody-m-d,yes,new_with_email,las_vegas
-Elite Medical Associates,elitemedlv.com,https://elitemedlv.com/,Las Vegas,NV,,,,,new_no_email,las_vegas
-Sky Health Wellness Clinic,skyhealthnv.com,https://www.skyhealthnv.com/,Las Vegas,NV,,,,,do_not_contact,las_vegas
-Renaissance Health Centre,iwholehealth.com,https://www.iwholehealth.com/,Las Vegas,NV,info@iwholehealth.com,B_unconfirmed,https://www.iwholehealth.com/contact/,,new_with_email,las_vegas
-Revolution Wellness,revolution-wellness.org,https://revolution-wellness.org/,Las Vegas,NV,info@amyleebassnpc.com,A_verified,https://revolution-wellness.org/contact-us/,yes,new_with_email,las_vegas
-LiveNow Longevity,livenowlongevity.com,https://www.livenowlongevity.com/,Las Vegas,NV,,,,,do_not_contact,las_vegas
-HEALOR,healor.com,https://healor.com/,Las Vegas,NV,contact@healor.com,B_unconfirmed,https://healor.com/terms-of-use/,,new_with_email,las_vegas
-Rove Wellness & Medspa,rovemedspa.com,https://rovemedspa.com/,Las Vegas,NV,armani@rovemedspa.com,A_verified,https://www.einpresswire.com/article/780712499/rove-wellness-medspa-a-luxurious-escape-in-the-heart-of-las-vegas,,new_with_email,las_vegas
-The Look Med Spa,thelookmedspalv.com,https://www.thelookmedspalv.com/,Las Vegas,NV,info@thelookmedspalv.com,B_unconfirmed,https://www.thelookmedspalv.com/contact-us/,,new_with_email,las_vegas
-Unicorn Medical Weight Loss and Medi Spa,unicornmedispa.com,https://unicornmedispa.com/,Las Vegas,NV,,,,,new_no_email,las_vegas
-Revenge MD,revengemd.com,https://www.revengemd.com/,Las Vegas,NV,vegas@revengemd.com,A_verified,https://www.revengemd.com/contact/,,new_with_email,las_vegas
-Dr. Rashin Med Spa,botoxinjectionslasvegas.com,https://botoxinjectionslasvegas.com/,Las Vegas,NV,,,,,new_no_email,las_vegas
-Skin Bar,skinbaronline.com,https://skinbaronline.com/,Las Vegas,NV,,,,,new_no_email,las_vegas
-Sculpted MD,sculptedmd.com,https://www.sculptedmd.com/,Las Vegas,NV,info@sculptedmd.com,B_unconfirmed,https://www.sculptedmd.com/contact/,,new_with_email,las_vegas
-BP Royal Medspa,bproyalmedspa.com,https://www.bproyalmedspa.com/,Las Vegas,NV,,,,,already_in_queue,las_vegas
-Henderson Med Spa,hendersonmedspa.com,https://www.hendersonmedspa.com/,Las Vegas,NV,info@hendersonim.com,A_verified,https://www.hendersonmedspa.com/contact-us,yes,new_with_email,las_vegas
-Atlas Health Institute,atlashealthinstitute.com,https://www.atlashealthinstitute.com/,Las Vegas,NV,,,,,new_no_email,las_vegas
-Absolute Hormone Health Clinic,absolutehormone.com,https://absolutehormone.com/,Las Vegas,NV,absolutehormone@gmail.com,A_verified,https://absolutehormone.com/,yes,new_with_email,las_vegas
-Las Vegas Peptide Clinic,lasvegaspeptideclinic.com,https://www.lasvegaspeptideclinic.com/,Las Vegas,NV,,,,,new_no_email,las_vegas
-TRTMD Health Clinic,trtmd.com,https://trtmd.com/,Las Vegas,NV,,,,,new_no_email,las_vegas
-The Aesthetics Lab,theaestheticslabmedspa.com,https://theaestheticslabmedspa.com/,Las Vegas,NV,,,,,new_no_email,las_vegas
-Sundrata Clinic,sundrataclinic.com,https://sundrataclinic.com/,Las Vegas,NV,,,,,already_in_queue,las_vegas
-Regenerate Medical Concierge,regeneratemedicalconcierge.com,https://regeneratemedicalconcierge.com/,Las Vegas,NV,,,,,new_no_email,las_vegas
-IUVENTUS Medical Center,iuventusmedcenter.com,https://iuventusmedcenter.com/,Las Vegas,NV,hello@iuventusmedical.com,A_verified,https://iuventusmedcenter.com/contact/,yes,new_with_email,las_vegas
-Dr. K Beauty LV,drkbeautylv.com,https://drkbeautylv.com/,Las Vegas,NV,dr.k@drkbeautylv.com,A_verified,https://drkbeautylv.com/contact-us/,,new_with_email,las_vegas
-Encompass Care,encompasscarelv.com,https://encompasscarelv.com/,Las Vegas,NV,encompasscare@me.com,A_verified,https://encompasscarelv.com/contact-us/,yes,new_with_email,las_vegas
-More Than Medical Wellness,morethanmedicalwellness.com,https://morethanmedicalwellness.com/,Las Vegas,NV,wellness@morethanmedicalwellness.com,A_verified,https://morethanmedicalwellness.com/contact/,,new_with_email,las_vegas
-VidaVital Medical,vidavitalmedical.com,https://www.vidavitalmedical.com/,Las Vegas,NV,info@vidavitalmedical.com,B_unconfirmed,https://www.vidavitalmedical.com/contact/,,new_with_email,las_vegas
-Transformative Health,transformativehealth.us,https://transformativehealth.us/,Las Vegas,NV,,,,,new_no_email,las_vegas
-Reign Beauty and Vitality,reignbeautyvitality.com,https://reignbeautyvitality.com/,Las Vegas,NV,care@reignbeautyvitality.com,A_verified,https://reignbeautyvitality.com/contact-us/,,new_with_email,las_vegas
-MDspa Las Vegas,mdspalv.com,https://www.mdspalv.com/,Las Vegas,NV,info@mdspalv.com,B_unconfirmed,https://www.mdspalv.com/contact-us,,new_with_email,las_vegas
-Parker Medical,parkermedical.org,https://parkermedical.org/,Las Vegas,NV,info@parkermedical.org,B_unconfirmed,https://parkermedical.org/contact/,,new_with_email,las_vegas
-Halcyon Health,halcyonoptimized.com,https://www.halcyonoptimized.com/,Las Vegas,NV,admin@halcyonoptimized.com,A_verified,https://www.halcyonoptimized.com/contact,,new_with_email,las_vegas
-Ageless Women's Health,agelesswomenshealth.com,https://www.agelesswomenshealth.com/,Las Vegas,NV,,,,,new_no_email,las_vegas
-LVC Medical,lvcmed.com,https://lvcmed.com/,Las Vegas,NV,,,,,already_in_queue,las_vegas
-Las Vegas Plastic Surgery,jjrothmd.com,https://www.jjrothmd.com/,Las Vegas,NV,contact@jjrothmd.com,B_unconfirmed,https://www.jjrothmd.com/contact/,,new_with_email,las_vegas
-Elevate Wellness,elevatewellnesslv.com,https://www.elevatewellnesslv.com/,Las Vegas,NV,,,,,new_no_email,las_vegas
-Xena Health,xenahealthlv.com,https://xenahealthlv.com/,Las Vegas,NV,,,,,already_in_queue,las_vegas
-Naked MD,nakedmd.com,https://www.nakedmd.com/,Las Vegas,NV,concierge@nakedmd.com,A_verified,https://www.nakedmd.com/pages/contact,,new_with_email,las_vegas
-White Coat Aesthetics,whitecoataesthetics.com,https://whitecoataesthetics.com/,Las Vegas,NV,info@whitecoataesthetics.com,B_unconfirmed,https://whitecoataesthetics.com/contact/,,new_with_email,las_vegas
-LuxeFactor Aesthetics,luxefactorlv.com,https://www.luxefactorlv.com/,Las Vegas,NV,office@luxefactorlv.com,A_verified,https://www.luxefactorlv.com/contact/,,new_with_email,las_vegas
-NuCanvas Aesthetics and Wellness,mynucanvas.com,https://mynucanvas.com/,Las Vegas,NV,,,,,new_no_email,las_vegas
-Henderson Internal Medicine Med Spa,hendersoninternalmedicine.com,https://hendersoninternalmedicine.com/,Las Vegas,NV,,,,,new_no_email,las_vegas
-Dynamic Stem Cell Therapy,stemcellpowernow.com,https://stemcellpowernow.com/,Las Vegas,NV,contact@stemcellpowernow.com,B_unconfirmed,https://stemcellpowernow.com/contact-call-us/,,new_with_email,las_vegas
-évolué Med Spa,evoluespa.com,https://evoluespa.com/,Las Vegas,NV,,,,,new_no_email,las_vegas
-The Med Spa Las Vegas,themedspalasvegas.com,https://themedspalasvegas.com/,Las Vegas,NV,themedspalasvegas@gmail.com,A_verified,https://themedspalasvegas.com/pages/contact,yes,new_with_email,las_vegas
-Chic la Vie Med Spa,chiclavie.com,https://chiclavie.com/,Las Vegas,NV,info@chiclavie.com,B_unconfirmed,https://chiclavie.com/contact-us/,,new_with_email,las_vegas
-Gameday Men's Health,gamedaymenshealth.com,https://gamedaymenshealth.com/,Las Vegas,NV,,,,,already_in_queue,las_vegas
-Talon Wellness,talonwellness.com,https://www.talonwellness.com/,Las Vegas,NV,info@talonwellness.com,B_unconfirmed,https://www.talonwellness.com/faqs,,new_with_email,las_vegas
-LV Surgery Associates,lvsurgical.com,https://lvsurgical.com/,Las Vegas,NV,,,,,new_no_email,las_vegas
-Mobile IV Therapy Las Vegas,mobileivtherapylasvegas.com,https://mobileivtherapylasvegas.com/,Las Vegas,NV,,,,,new_no_email,las_vegas
-Reset IV,resetiv.com,https://resetiv.com/,Las Vegas,NV,customercare@resetiv.com,A_verified,https://resetiv.com/pages/contact-us,,new_with_email,las_vegas
-Advanced TRT Clinic,advancedtrtclinic.com,https://advancedtrtclinic.com/,Las Vegas,NV,,,,,new_no_email,las_vegas
-Ageless Men's Health,agelessmenshealth.com,https://www.agelessmenshealth.com/,Las Vegas,NV,,,,,new_no_email,las_vegas
-AlphaGenics,alphagenicshealth.com,https://alphagenicshealth.com/,Las Vegas,NV,Alphagenicshealth@gmail.com,A_verified,https://alphagenicshealth.com/contact/,yes,new_with_email,las_vegas
-Boca Med Spa,bocamedspalv.com,https://bocamedspalv.com/,Las Vegas,NV,info@bocamedspalv.com,B_unconfirmed,https://bocamedspalv.com/contact/,,new_with_email,las_vegas
-RejuvLV Wellness & Aesthetics,rejuvlv.com,https://rejuvlv.com/,Las Vegas,NV,info@rejuvlv.com,B_unconfirmed,https://rejuvlv.com/contact-us/,,new_with_email,las_vegas
-Estetica Wellness,esteticawellness.com,https://www.esteticawellness.com/,Las Vegas,NV,,,,,new_no_email,las_vegas
-WoW Health & Beauty Medical Spa,lasvegashealthandbeautyspa.com,https://lasvegashealthandbeautyspa.com/,Las Vegas,NV,,,,,new_no_email,las_vegas
-Las Vegas Medical Institute,lasvegasmedicalinstitute.com,https://lasvegasmedicalinstitute.com/,Las Vegas,NV,,,,,new_no_email,las_vegas
-Degree Wellness,degreewellness.com,https://degreewellness.com/,Las Vegas,NV,contactus@degreewellness.com,A_verified,https://www.crunchbase.com/organization/degree-wellness,,new_with_email,las_vegas
-Aesthetics MedSpa,aestheticsmedspa.com,https://aestheticsmedspa.com/,Reno,NV,support@aestheticsreno.com,A_verified,https://aestheticsmedspa.com/contact/,yes,new_with_email,northern_nv
-RenewMD Medical Spa,renewmd.com,https://renewmd.com/,Reno,NV,,,,,new_no_email,northern_nv
-Avance Plastic Surgery Institute,avanceplasticsurgery.com,https://www.avanceplasticsurgery.com/,Reno,NV,info@avanceinstitute.com,A_verified,https://www.avanceplasticsurgery.com/contact-us-dr-erez-dayan/,yes,new_with_email,northern_nv
-Alpine Wellness,alpinewellnessnv.com,https://alpinewellnessnv.com/,Reno,NV,info@alpinewellnessnv.com,B_unconfirmed,https://www.alpinewellnessnv.com/contact-us/,,new_with_email,northern_nv
-Boost Integrated Medical Center,boostnevada.com,https://www.boostnevada.com/,Reno,NV,,,,,new_no_email,northern_nv
-Renewed Vitality and Wellness,renewedvitalityandwellness.com,https://renewedvitalityandwellness.com/,Reno,NV,amber@renewedvitalityandwellness.com,A_verified,https://renewedvitalityandwellness.com/contact-us,,new_with_email,northern_nv
-New Theory Medical,newtheorymedical.com,https://www.newtheorymedical.com/,Reno,NV,,,,,new_no_email,northern_nv
-DURM Aesthetics & Wellness,durmnv.com,https://www.durmnv.com/,Reno,NV,durmaesthetics@gmail.com,A_verified,https://www.durmnv.com/contact/,yes,new_with_email,northern_nv
-Murphy Plastic Surgery & Medical Spa,nnpsa.com,https://www.nnpsa.com/,Reno,NV,,,,,new_no_email,northern_nv
-Reno Regenerative Medicine,renoregen.com,https://renoregen.com/,Reno,NV,info@renoregen.com,B_unconfirmed,https://renoregen.com/contact/,,new_with_email,northern_nv
-To Know Oneself Reno,reno.toknowoneself.co,https://reno.toknowoneself.co/,Reno,NV,,,,,new_no_email,northern_nv
-bioworX,mybioworx.com,https://mybioworx.com/,Sparks,NV,,,,,new_no_email,northern_nv
-Sierra Nevada Wellness Center,sierranevadawellness.com,https://sierranevadawellness.com/,Sparks,NV,staff@snwc.biz,A_verified,https://www.sierranevadawellness.com/contact-sierra-nevada-wellness-center,yes,new_with_email,northern_nv
-Infinite Vitality Wellness,infinitevitalitynv.com,https://www.infinitevitalitynv.com/,Carson City,NV,infinitevitalitymedspa@gmail.com,A_verified,https://www.infinitevitalitynv.com/contact-infinite-vitality-wellness/,yes,new_with_email,northern_nv
-The Nevada Center for Alternative & Anti-Aging Medicine,antiagingmedicine.com,https://antiagingmedicine.com/,Carson City,NV,,,,,new_no_email,northern_nv
-Renew Skincare,renewskincc.com,https://www.renewskincc.com/,Carson City,NV,,,,,new_no_email,northern_nv
-Minden Med Spa,mindenmedspa.com,https://www.mindenmedspa.com/,Minden,NV,info@mindenmedspa.com,B_unconfirmed,https://www.mindenmedspa.com/,,new_with_email,northern_nv
-South Lake Med Spa,southlakemedspatahoe.com,https://www.southlakemedspatahoe.com/,Minden,NV,info@southlakemedspatahoe.com,B_unconfirmed,https://www.southlakemedspatahoe.com/blank-7,,new_with_email,northern_nv
-Cosmetic Medicine Center,cosmeticmedicinecenter.com,https://www.cosmeticmedicinecenter.com/,Gardnerville,NV,cosmeticmedicinecenter@yahoo.com,A_verified,https://www.cosmeticmedicinecenter.com/contact-us,yes,new_with_email,northern_nv
-High Sierra Restorative Health,restorativehealthnv.com,https://restorativehealthnv.com/,Incline Village,NV,,,,,new_no_email,northern_nv
-Elko Replenish Med Spa,elkoreplenishmedspa.com,https://elkoreplenishmedspa.com/,Elko,NV,elkoreplenishmedspa@gmail.com,A_verified,https://elkoreplenishmedspa.com/contact/,yes,new_with_email,northern_nv
-Elite Health & Wellness Elko,elitehealthelko.com,https://www.elitehealthelko.com/,Elko,NV,elitehealthelko@gmail.com,A_verified,https://www.elitehealthelko.com/contact,yes,new_with_email,northern_nv
-Ascension Health,ascensionhealthnv.com,https://ascensionhealthnv.com/,Fernley,NV,,,,,new_no_email,northern_nv
-Enliven Medical Spa and Wellness Center,enlivenwellnessmedspa.com,https://enlivenwellnessmedspa.com/,Mesquite,NV,,,,,new_no_email,northern_nv
-Enhanced Aesthetics & Wellness,enhanced-aw.com,https://www.enhanced-aw.com/,Pahrump,NV,Info@aestheticenhancements.online,A_verified,https://www.enhanced-aw.com/contact/,yes,new_with_email,northern_nv
-Elite Health & Wellness,theelitehealth.com,https://theelitehealth.com/,Boulder City,NV,info@theelitehealth.com,B_unconfirmed,https://theelitehealth.com/contact/,,new_with_email,northern_nv
-Optimal Well MD,optimalwellmd.com,https://optimalwellmd.com/,Virginia Beach,VA,hello@optimalwellmd.com,B_unconfirmed,https://www.optimalwellmd.com/contact/,,new_with_email,national_va_nj_ct
-Fountain of You MD,fountainofyoumd.com,https://fountainofyoumd.com/,Virginia Beach,VA,info@fountainofyoumd.com,B_unconfirmed,https://fountainofyoumd.com/contact/,,new_with_email,national_va_nj_ct
-Sunshine Health DPC,sunshinehealthdpc.com,https://sunshinehealthdpc.com/,Virginia Beach,VA,info@sunshinehealthdpc.com,B_unconfirmed,https://sunshinehealthdpc.com/contact-us/,,new_with_email,national_va_nj_ct
-Salt Spa & Wellness Center,vbsaltspa.com,https://vbsaltspa.com/,Virginia Beach,VA,,,,,new_no_email,national_va_nj_ct
-Riva MedSpa,rivamedspa.com,https://rivamedspa.com/,Virginia Beach,VA,,,,,new_no_email,national_va_nj_ct
-Venture Wellness RVA,venturewellnessrva.com,https://venturewellnessrva.com/,Midlothian,VA,info@venturewellnessrva.com,B_unconfirmed,https://venturewellnessrva.com/contact-us/,,new_with_email,national_va_nj_ct
-RVA Revive,rvarevive.com,https://rvarevive.com/,Glen Allen,VA,contact@rvarevive.com,B_unconfirmed,https://rvarevive.com/contact/,,new_with_email,national_va_nj_ct
-Moke Aesthetics,mokeaesthetics.com,https://mokeaesthetics.com/,Henrico,VA,kirsten@mokeaesthetics.com,A_verified,https://www.mokeaesthetics.com/contact,,new_with_email,national_va_nj_ct
-Regenerate Richmond,regeneraterichmond.com,https://regeneraterichmond.com/,Richmond,VA,,,,,new_no_email,national_va_nj_ct
-Vita Pure IV,vitapureinfusions.com,https://vitapureinfusions.com/,Richmond,VA,,,,,new_no_email,national_va_nj_ct
-Lucid Med Spa,lucid-medspa.com,https://lucid-medspa.com/,Glen Allen,VA,,,,,new_no_email,national_va_nj_ct
-Dermlounge,dermlounge.com,https://dermlounge.com/,Richmond,VA,,,,,new_no_email,national_va_nj_ct
-Richmond Aesthetic Weight Loss,weightlossclinicrichmond.com,https://weightlossclinicrichmond.com/,Richmond,VA,,,,,new_no_email,national_va_nj_ct
-Richmond Plastic Surgery,richmondplasticsurgery.com,https://richmondplasticsurgery.com/,Richmond,VA,,,,,new_no_email,national_va_nj_ct
-Neil Zemmel MD,drneilzemmel.com,https://drneilzemmel.com/,Richmond,VA,,,,,new_no_email,national_va_nj_ct
-Sage Vine Aesthetics,sagevineaesthetics.com,https://sagevineaesthetics.com/,Mechanicsville,VA,,,,,new_no_email,national_va_nj_ct
-Advanced Aesthetics USA,advancedaestheticsusa.com,https://advancedaestheticsusa.com/,Richmond,VA,,,,,new_no_email,national_va_nj_ct
-ProMD Health Arlington,promdhealth.com,https://promdhealth.com/,Arlington,VA,consults@promdhealth.com,A_verified,https://promdhealth.com/contact/,,do_not_contact,national_va_nj_ct
-RxWellness Aesthetics & Anti-Aging,rxwellnessmedspa.com,https://rxwellnessmedspa.com/,Arlington,VA,Request-medspa@rxwellness.com,A_verified,https://www.rxwellnessmedspa.com/contact-us/,yes,new_with_email,national_va_nj_ct
-NOVA Concierge Medicine & Aesthetics,novaconciergemed.com,https://novaconciergemed.com/,Arlington,VA,info@novacma.com,A_verified,https://novaconciergemed.com/contact-us/,yes,new_with_email,national_va_nj_ct
-Evexia Medspa,evexiamedspa.com,https://evexiamedspa.com/,McLean,VA,evexia@evexiamedspa.com,A_verified,https://evexiamedspa.com/contact-us/,,already_in_queue,national_va_nj_ct
-Harmonie Aesthetics,harmoniemedspa.com,https://harmoniemedspa.com/,Fairfax,VA,,,,,new_no_email,national_va_nj_ct
-Institute for Hormonal Balance,donovitz.com,https://donovitz.com/,Arlington,VA,,,,,new_no_email,national_va_nj_ct
-Elevera Health,eleverahealth.com,https://eleverahealth.com/,Arlington,VA,,,,,new_no_email,national_va_nj_ct
-Bare Beauty VA,barebeautyva.com,https://barebeautyva.com/,Alexandria,VA,,,,,new_no_email,national_va_nj_ct
-Weight Loss and Vitality,weightlossandvitality.com,https://weightlossandvitality.com/,Alexandria,VA,,,,,new_no_email,national_va_nj_ct
-Peak by MD,peakbymd.com,https://peakbymd.com/,Jersey City,NJ,info@peakbymd.com,B_unconfirmed,https://peakbymd.com/contact/,,new_with_email,national_va_nj_ct
-Downtown Medspa,downtownmedspa.com,https://downtownmedspa.com/,Jersey City,NJ,marietta@downtownmedspa.com,A_verified,https://www.downtownmedspa.com/contactus,,new_with_email,national_va_nj_ct
-Ethos Aesthetics + Wellness,myethosspa.com,https://myethosspa.com/,Hoboken,NJ,info@myethosspa.com,B_unconfirmed,https://myethosspa.com/contact/,,new_with_email,national_va_nj_ct
-1Aesthetic,1aesthetic.com,https://1aesthetic.com/,Hoboken,NJ,skingoods@yahoo.com,A_verified,https://1aesthetic.com/contact-us/,yes,new_with_email,national_va_nj_ct
-The Aesthetic Concierge,theaestheticconcierge.co,https://theaestheticconcierge.co/,Hoboken,NJ,,,,,do_not_contact,national_va_nj_ct
-Hormone and Weight Loss Doctors NJ,hormoneweightlossdoctorsnj.com,https://hormoneweightlossdoctorsnj.com/,Newark,NJ,,,,,new_no_email,national_va_nj_ct
-NJ Health & Wellness,njhwllc.com,https://njhwllc.com/,Newark,NJ,,,,,new_no_email,national_va_nj_ct
-Age Well MD,agewellmdnj.com,https://agewellmdnj.com/,Livingston,NJ,,,,,new_no_email,national_va_nj_ct
-New Jersey Functional Medicine,newjerseyfunctionalmed.com,https://newjerseyfunctionalmed.com/,Florham Park,NJ,,,,,new_no_email,national_va_nj_ct
-Iorio Plastic Surgery & Medspa,iorioplasticsurgery.com,https://iorioplasticsurgery.com/,Nutley,NJ,,,,,new_no_email,national_va_nj_ct
-Arora MD Spa,aroramdspa.com,https://aroramdspa.com/,East Brunswick,NJ,,,,,new_no_email,national_va_nj_ct
-Greenwich MD,greenwich-md.com,https://greenwich-md.com/,Stamford,CT,drquerido@greenwich-md.com,A_verified,https://greenwich-md.com/contact-us/,,new_with_email,national_va_nj_ct
-Serotonin Centers Stamford,serotonincenters.com,https://serotonincenters.com/,Stamford,CT,ContactUs@serotonincenters.com,A_verified,https://www.serotonincenters.com/stamford/contact/,,new_with_email,national_va_nj_ct
-Dr. Sobo Holistic Medicine,drsobo.com,https://drsobo.com/,Stamford,CT,optimalhealth@optonline.net,A_verified,https://drsobo.com/contact,yes,new_with_email,national_va_nj_ct
-Integrated Health Alliance,integratedhealthall.com,https://integratedhealthall.com/,Stamford,CT,,,,,new_no_email,national_va_nj_ct
-Refreshed Medical Aesthetics,refreshedmed.com,https://refreshedmed.com/,West Hartford,CT,refreshedmedical@gmail.com,A_verified,https://www.refreshedmed.com/about-us,yes,new_with_email,national_va_nj_ct
-CT Medical Weight Loss & Beyond,ctmedweightloss.com,https://ctmedweightloss.com/,Glastonbury,CT,Glastonbury@CTMedWeightloss.com,A_verified,https://ctmedweightloss.com/contact/,,new_with_email,national_va_nj_ct
-Greenwich Medical Spa,greenwichmedicalspa.com,https://greenwichmedicalspa.com/,West Hartford,CT,,,,,already_in_queue,national_va_nj_ct
-Glastonbury MedSpa (Dr. Beam),doctorbeam.com,https://doctorbeam.com/,Glastonbury,CT,,,,,new_no_email,national_va_nj_ct
+business_name,domain,website,city,state,email,email_tier,email_source,domain_mismatch,flag,status,region
+Advanced Aesthetics Med Spa,advancedaestheticslv.com,https://advancedaestheticslv.com/,Las Vegas,NV,info@advancedaestheticslv.com,B_unconfirmed,https://advancedaestheticslv.com/contact/,,,new_with_email,las_vegas
+Las Vegas Body Sculpting,lvbodysculpting.com,https://www.lvbodysculpting.com/,Las Vegas,NV,info@lvbodysculpting.com,B_unconfirmed,https://www.lvbodysculpting.com/contact/,,,new_with_email,las_vegas
+Flawless MedSpa,flawlessmedspas.com,https://www.flawlessmedspas.com/,Las Vegas,NV,FlawlessMedSpas@icloud.com,B_unconfirmed,https://www.flawlessmedspas.com/contact,yes,,new_with_email,las_vegas
+LURE Boutique Medical Spa,luremedicalspa.com,https://www.luremedicalspa.com/,Las Vegas,NV,info@luremedicalspa.com,B_unconfirmed,https://www.luremedicalspa.com/contact-us.php,,,new_with_email,las_vegas
+Elyzium Med Spa,elyziummedspa.com,https://elyziummedspa.com/,Las Vegas,NV,info@elyziummedspa.com,B_unconfirmed,https://elyziummedspa.com/contact-us,,,new_with_email,las_vegas
+NovuSkin Med Spa,novuskin.com,https://www.novuskin.com/,Las Vegas,NV,info@novuskin.com,B_unconfirmed,https://www.novuskin.com/contact-us/,,,new_with_email,las_vegas
+Sinfully Beautiful,sinfully-beautiful.com,https://sinfully-beautiful.com/,Las Vegas,NV,,,,,,new_no_email,las_vegas
+Medi-Slim Weight Loss & Spa,medisliminc.com,https://www.medisliminc.com/,Las Vegas,NV,,,,,,new_no_email,las_vegas
+Modern Wellness Clinic,modernwellnessclinic.com,https://www.modernwellnessclinic.com/,Las Vegas,NV,info@modernwellnessclinic.com,B_unconfirmed,https://shop.modernwellnessclinic.com/contact,,,new_with_email,las_vegas
+Beverly Hills Rejuvenation Center,bhrcenter.com,https://www.bhrcenter.com/,Las Vegas,NV,,,,,,already_in_queue,las_vegas
+American Medical Wellness,americanmedicalwellness.com,https://www.americanmedicalwellness.com/,Las Vegas,NV,info@americanmedicalwellness.com,B_unconfirmed,https://www.americanmedicalwellness.com/contact/,,,new_with_email,las_vegas
+Vitality Medical & Wellness Center,vitalitymedicalwellness.com,https://www.vitalitymedicalwellness.com/,Las Vegas,NV,Info@VitalityMedicalWellness.com,B_unconfirmed,https://www.vitalitymedicalwellness.com/contact/,,,new_with_email,las_vegas
+Vital Infusions & Performance,vitalinfusionsandperformance.com,https://vitalinfusionsandperformance.com/,Las Vegas,NV,info@vitalinfusionsandperformance.com,B_unconfirmed,https://vitalinfusionsandperformance.com/contact/,,,new_with_email,las_vegas
+Infuze Aesthetics & Wellness,infuzelv.com,https://www.infuzelv.com/,Las Vegas,NV,support@infuzelv.com,A_verified,https://www.infuzelv.com/,,,new_with_email,las_vegas
+IV Vitamin Therapy Clinic,myvitamintherapy.com,https://www.myvitamintherapy.com/,Las Vegas,NV,Reservations@myvitamintherapy.com,A_verified,https://www.myvitamintherapy.com/contact,,,new_with_email,las_vegas
+Sculpt Spa,sculptspalv.com,https://sculptspalv.com/,Las Vegas,NV,info@sculptspalv.com,B_unconfirmed,https://sculptspalv.com/contact-us/,,,new_with_email,las_vegas
+Genesis Lifestyle Medicine,genesislifestylemedicine.com,https://www.genesislifestylemedicine.com/,Las Vegas,NV,contact@genesislifestylemedicine.com,B_unconfirmed,https://www.genesislifestylemedicine.com/contact/,,,new_with_email,las_vegas
+Body Balance Medical,bodybalancemedical.com,https://bodybalancemedical.com/,Las Vegas,NV,,,,,,already_in_queue,las_vegas
+Bright You Med Lounge,brightyoulv.com,https://www.brightyoulv.com/,Las Vegas,NV,,,,,,already_in_queue,las_vegas
+Medspa-LV,medspa-lv.com,https://medspa-lv.com/,Las Vegas,NV,customer-care@medspa-lv.com,A_verified,https://medspa-lv.com/contact-us/,,,new_with_email,las_vegas
+TrimBody M.D.,trimbodymd.com,https://www.trimbodymd.com/,Las Vegas,NV,trimbodymd08@gmail.com,B_unconfirmed,https://www.allbusiness.com/company-profile/trimbody-m-d,yes,,new_with_email,las_vegas
+Elite Medical Associates,elitemedlv.com,https://elitemedlv.com/,Las Vegas,NV,,,,,,new_no_email,las_vegas
+Sky Health Wellness Clinic,skyhealthnv.com,https://www.skyhealthnv.com/,Las Vegas,NV,,,,,,do_not_contact,las_vegas
+Renaissance Health Centre,iwholehealth.com,https://www.iwholehealth.com/,Las Vegas,NV,info@iwholehealth.com,B_unconfirmed,https://www.iwholehealth.com/contact/,,,new_with_email,las_vegas
+Revolution Wellness,revolution-wellness.org,https://revolution-wellness.org/,Las Vegas,NV,info@amyleebassnpc.com,A_verified,https://revolution-wellness.org/contact-us/,yes,,new_with_email,las_vegas
+LiveNow Longevity,livenowlongevity.com,https://www.livenowlongevity.com/,Las Vegas,NV,,,,,,do_not_contact,las_vegas
+HEALOR,healor.com,https://healor.com/,Las Vegas,NV,contact@healor.com,B_unconfirmed,https://healor.com/terms-of-use/,,,new_with_email,las_vegas
+Rove Wellness & Medspa,rovemedspa.com,https://rovemedspa.com/,Las Vegas,NV,armani@rovemedspa.com,A_verified,https://www.einpresswire.com/article/780712499/rove-wellness-medspa-a-luxurious-escape-in-the-heart-of-las-vegas,,,new_with_email,las_vegas
+The Look Med Spa,thelookmedspalv.com,https://www.thelookmedspalv.com/,Las Vegas,NV,info@thelookmedspalv.com,B_unconfirmed,https://www.thelookmedspalv.com/contact-us/,,,new_with_email,las_vegas
+Unicorn Medical Weight Loss and Medi Spa,unicornmedispa.com,https://unicornmedispa.com/,Las Vegas,NV,,,,,,new_no_email,las_vegas
+Revenge MD,revengemd.com,https://www.revengemd.com/,Las Vegas,NV,vegas@revengemd.com,A_verified,https://www.revengemd.com/contact/,,,new_with_email,las_vegas
+Dr. Rashin Med Spa,botoxinjectionslasvegas.com,https://botoxinjectionslasvegas.com/,Las Vegas,NV,,,,,,new_no_email,las_vegas
+Skin Bar,skinbaronline.com,https://skinbaronline.com/,Las Vegas,NV,,,,,,new_no_email,las_vegas
+Sculpted MD,sculptedmd.com,https://www.sculptedmd.com/,Las Vegas,NV,info@sculptedmd.com,B_unconfirmed,https://www.sculptedmd.com/contact/,,,new_with_email,las_vegas
+BP Royal Medspa,bproyalmedspa.com,https://www.bproyalmedspa.com/,Las Vegas,NV,,,,,,already_in_queue,las_vegas
+Henderson Med Spa,hendersonmedspa.com,https://www.hendersonmedspa.com/,Las Vegas,NV,info@hendersonim.com,A_verified,https://www.hendersonmedspa.com/contact-us,yes,,new_with_email,las_vegas
+Atlas Health Institute,atlashealthinstitute.com,https://www.atlashealthinstitute.com/,Las Vegas,NV,,,,,,new_no_email,las_vegas
+Absolute Hormone Health Clinic,absolutehormone.com,https://absolutehormone.com/,Las Vegas,NV,absolutehormone@gmail.com,B_unconfirmed,https://absolutehormone.com/,yes,,new_with_email,las_vegas
+Las Vegas Peptide Clinic,lasvegaspeptideclinic.com,https://www.lasvegaspeptideclinic.com/,Las Vegas,NV,,,,,,new_no_email,las_vegas
+TRTMD Health Clinic,trtmd.com,https://trtmd.com/,Las Vegas,NV,,,,,,new_no_email,las_vegas
+The Aesthetics Lab,theaestheticslabmedspa.com,https://theaestheticslabmedspa.com/,Las Vegas,NV,,,,,,new_no_email,las_vegas
+Sundrata Clinic,sundrataclinic.com,https://sundrataclinic.com/,Las Vegas,NV,,,,,,already_in_queue,las_vegas
+Regenerate Medical Concierge,regeneratemedicalconcierge.com,https://regeneratemedicalconcierge.com/,Las Vegas,NV,,,,,,new_no_email,las_vegas
+IUVENTUS Medical Center,iuventusmedcenter.com,https://iuventusmedcenter.com/,Las Vegas,NV,hello@iuventusmedical.com,A_verified,https://iuventusmedcenter.com/contact/,yes,,new_with_email,las_vegas
+Dr. K Beauty LV,drkbeautylv.com,https://drkbeautylv.com/,Las Vegas,NV,dr.k@drkbeautylv.com,A_verified,https://drkbeautylv.com/contact-us/,,,new_with_email,las_vegas
+Encompass Care,encompasscarelv.com,https://encompasscarelv.com/,Las Vegas,NV,encompasscare@me.com,B_unconfirmed,https://encompasscarelv.com/contact-us/,yes,,new_with_email,las_vegas
+More Than Medical Wellness,morethanmedicalwellness.com,https://morethanmedicalwellness.com/,Las Vegas,NV,wellness@morethanmedicalwellness.com,A_verified,https://morethanmedicalwellness.com/contact/,,,new_with_email,las_vegas
+VidaVital Medical,vidavitalmedical.com,https://www.vidavitalmedical.com/,Las Vegas,NV,info@vidavitalmedical.com,B_unconfirmed,https://www.vidavitalmedical.com/contact/,,,new_with_email,las_vegas
+Transformative Health,transformativehealth.us,https://transformativehealth.us/,Las Vegas,NV,,,,,,new_no_email,las_vegas
+Reign Beauty and Vitality,reignbeautyvitality.com,https://reignbeautyvitality.com/,Las Vegas,NV,care@reignbeautyvitality.com,A_verified,https://reignbeautyvitality.com/contact-us/,,,new_with_email,las_vegas
+MDspa Las Vegas,mdspalv.com,https://www.mdspalv.com/,Las Vegas,NV,info@mdspalv.com,B_unconfirmed,https://www.mdspalv.com/contact-us,,,new_with_email,las_vegas
+Parker Medical,parkermedical.org,https://parkermedical.org/,Las Vegas,NV,info@parkermedical.org,B_unconfirmed,https://parkermedical.org/contact/,,,new_with_email,las_vegas
+Halcyon Health,halcyonoptimized.com,https://www.halcyonoptimized.com/,Las Vegas,NV,admin@halcyonoptimized.com,A_verified,https://www.halcyonoptimized.com/contact,,,new_with_email,las_vegas
+Ageless Women's Health,agelesswomenshealth.com,https://www.agelesswomenshealth.com/,Las Vegas,NV,,,,,,new_no_email,las_vegas
+LVC Medical,lvcmed.com,https://lvcmed.com/,Las Vegas,NV,,,,,,already_in_queue,las_vegas
+Las Vegas Plastic Surgery,jjrothmd.com,https://www.jjrothmd.com/,Las Vegas,NV,contact@jjrothmd.com,B_unconfirmed,https://www.jjrothmd.com/contact/,,,new_with_email,las_vegas
+Elevate Wellness,elevatewellnesslv.com,https://www.elevatewellnesslv.com/,Las Vegas,NV,,,,,,new_no_email,las_vegas
+Xena Health,xenahealthlv.com,https://xenahealthlv.com/,Las Vegas,NV,,,,,,already_in_queue,las_vegas
+Naked MD,nakedmd.com,https://www.nakedmd.com/,Las Vegas,NV,concierge@nakedmd.com,A_verified,https://www.nakedmd.com/pages/contact,,,new_with_email,las_vegas
+White Coat Aesthetics,whitecoataesthetics.com,https://whitecoataesthetics.com/,Las Vegas,NV,info@whitecoataesthetics.com,B_unconfirmed,https://whitecoataesthetics.com/contact/,,,new_with_email,las_vegas
+LuxeFactor Aesthetics,luxefactorlv.com,https://www.luxefactorlv.com/,Las Vegas,NV,office@luxefactorlv.com,A_verified,https://www.luxefactorlv.com/contact/,,,new_with_email,las_vegas
+NuCanvas Aesthetics and Wellness,mynucanvas.com,https://mynucanvas.com/,Las Vegas,NV,,,,,,new_no_email,las_vegas
+Henderson Internal Medicine Med Spa,hendersoninternalmedicine.com,https://hendersoninternalmedicine.com/,Las Vegas,NV,,,,,,new_no_email,las_vegas
+Dynamic Stem Cell Therapy,stemcellpowernow.com,https://stemcellpowernow.com/,Las Vegas,NV,contact@stemcellpowernow.com,B_unconfirmed,https://stemcellpowernow.com/contact-call-us/,,,new_with_email,las_vegas
+évolué Med Spa,evoluespa.com,https://evoluespa.com/,Las Vegas,NV,,,,,,new_no_email,las_vegas
+The Med Spa Las Vegas,themedspalasvegas.com,https://themedspalasvegas.com/,Las Vegas,NV,themedspalasvegas@gmail.com,B_unconfirmed,https://themedspalasvegas.com/pages/contact,yes,,new_with_email,las_vegas
+Chic la Vie Med Spa,chiclavie.com,https://chiclavie.com/,Las Vegas,NV,info@chiclavie.com,B_unconfirmed,https://chiclavie.com/contact-us/,,,new_with_email,las_vegas
+Gameday Men's Health,gamedaymenshealth.com,https://gamedaymenshealth.com/,Las Vegas,NV,,,,,,already_in_queue,las_vegas
+Talon Wellness,talonwellness.com,https://www.talonwellness.com/,Las Vegas,NV,info@talonwellness.com,B_unconfirmed,https://www.talonwellness.com/faqs,,,new_with_email,las_vegas
+LV Surgery Associates,lvsurgical.com,https://lvsurgical.com/,Las Vegas,NV,,,,,,new_no_email,las_vegas
+Mobile IV Therapy Las Vegas,mobileivtherapylasvegas.com,https://mobileivtherapylasvegas.com/,Las Vegas,NV,,,,,,new_no_email,las_vegas
+Reset IV,resetiv.com,https://resetiv.com/,Las Vegas,NV,customercare@resetiv.com,A_verified,https://resetiv.com/pages/contact-us,,,new_with_email,las_vegas
+Advanced TRT Clinic,advancedtrtclinic.com,https://advancedtrtclinic.com/,Las Vegas,NV,,,,,,new_no_email,las_vegas
+Ageless Men's Health,agelessmenshealth.com,https://www.agelessmenshealth.com/,Las Vegas,NV,,,,,,new_no_email,las_vegas
+AlphaGenics,alphagenicshealth.com,https://alphagenicshealth.com/,Las Vegas,NV,Alphagenicshealth@gmail.com,B_unconfirmed,https://alphagenicshealth.com/contact/,yes,,new_with_email,las_vegas
+Boca Med Spa,bocamedspalv.com,https://bocamedspalv.com/,Las Vegas,NV,info@bocamedspalv.com,B_unconfirmed,https://bocamedspalv.com/contact/,,,new_with_email,las_vegas
+RejuvLV Wellness & Aesthetics,rejuvlv.com,https://rejuvlv.com/,Las Vegas,NV,info@rejuvlv.com,B_unconfirmed,https://rejuvlv.com/contact-us/,,,new_with_email,las_vegas
+Estetica Wellness,esteticawellness.com,https://www.esteticawellness.com/,Las Vegas,NV,,,,,,new_no_email,las_vegas
+WoW Health & Beauty Medical Spa,lasvegashealthandbeautyspa.com,https://lasvegashealthandbeautyspa.com/,Las Vegas,NV,,,,,,new_no_email,las_vegas
+Las Vegas Medical Institute,lasvegasmedicalinstitute.com,https://lasvegasmedicalinstitute.com/,Las Vegas,NV,,,,,,new_no_email,las_vegas
+Degree Wellness,degreewellness.com,https://degreewellness.com/,Las Vegas,NV,contactus@degreewellness.com,A_verified,https://www.crunchbase.com/organization/degree-wellness,,,new_with_email,las_vegas
+Aesthetics MedSpa,aestheticsmedspa.com,https://aestheticsmedspa.com/,Reno,NV,support@aestheticsreno.com,A_verified,https://aestheticsmedspa.com/contact/,yes,,new_with_email,northern_nv
+RenewMD Medical Spa,renewmd.com,https://renewmd.com/,Reno,NV,,,,,,new_no_email,northern_nv
+Avance Plastic Surgery Institute,avanceplasticsurgery.com,https://www.avanceplasticsurgery.com/,Reno,NV,info@avanceinstitute.com,A_verified,https://www.avanceplasticsurgery.com/contact-us-dr-erez-dayan/,yes,,new_with_email,northern_nv
+Alpine Wellness,alpinewellnessnv.com,https://alpinewellnessnv.com/,Reno,NV,info@alpinewellnessnv.com,B_unconfirmed,https://www.alpinewellnessnv.com/contact-us/,,,new_with_email,northern_nv
+Boost Integrated Medical Center,boostnevada.com,https://www.boostnevada.com/,Reno,NV,,,,,,new_no_email,northern_nv
+Renewed Vitality and Wellness,renewedvitalityandwellness.com,https://renewedvitalityandwellness.com/,Reno,NV,amber@renewedvitalityandwellness.com,A_verified,https://renewedvitalityandwellness.com/contact-us,,,new_with_email,northern_nv
+New Theory Medical,newtheorymedical.com,https://www.newtheorymedical.com/,Reno,NV,,,,,,new_no_email,northern_nv
+DURM Aesthetics & Wellness,durmnv.com,https://www.durmnv.com/,Reno,NV,durmaesthetics@gmail.com,B_unconfirmed,https://www.durmnv.com/contact/,yes,,new_with_email,northern_nv
+Murphy Plastic Surgery & Medical Spa,nnpsa.com,https://www.nnpsa.com/,Reno,NV,,,,,,new_no_email,northern_nv
+Reno Regenerative Medicine,renoregen.com,https://renoregen.com/,Reno,NV,info@renoregen.com,B_unconfirmed,https://renoregen.com/contact/,,,new_with_email,northern_nv
+To Know Oneself Reno,reno.toknowoneself.co,https://reno.toknowoneself.co/,Reno,NV,,,,,,new_no_email,northern_nv
+bioworX,mybioworx.com,https://mybioworx.com/,Sparks,NV,,,,,,new_no_email,northern_nv
+Sierra Nevada Wellness Center,sierranevadawellness.com,https://sierranevadawellness.com/,Sparks,NV,staff@snwc.biz,A_verified,https://www.sierranevadawellness.com/contact-sierra-nevada-wellness-center,yes,,new_with_email,northern_nv
+Infinite Vitality Wellness,infinitevitalitynv.com,https://www.infinitevitalitynv.com/,Carson City,NV,infinitevitalitymedspa@gmail.com,A_verified,https://www.infinitevitalitynv.com/contact-infinite-vitality-wellness/,yes,,new_with_email,northern_nv
+The Nevada Center for Alternative & Anti-Aging Medicine,antiagingmedicine.com,https://antiagingmedicine.com/,Carson City,NV,,,,,,new_no_email,northern_nv
+Renew Skincare,renewskincc.com,https://www.renewskincc.com/,Carson City,NV,,,,,,new_no_email,northern_nv
+Minden Med Spa,mindenmedspa.com,https://www.mindenmedspa.com/,Minden,NV,info@mindenmedspa.com,B_unconfirmed,https://www.mindenmedspa.com/,,,new_with_email,northern_nv
+South Lake Med Spa,southlakemedspatahoe.com,https://www.southlakemedspatahoe.com/,Minden,NV,info@southlakemedspatahoe.com,B_unconfirmed,https://www.southlakemedspatahoe.com/blank-7,,,new_with_email,northern_nv
+Cosmetic Medicine Center,cosmeticmedicinecenter.com,https://www.cosmeticmedicinecenter.com/,Gardnerville,NV,cosmeticmedicinecenter@yahoo.com,B_unconfirmed,https://www.cosmeticmedicinecenter.com/contact-us,yes,,new_with_email,northern_nv
+High Sierra Restorative Health,restorativehealthnv.com,https://restorativehealthnv.com/,Incline Village,NV,,,,,,new_no_email,northern_nv
+Elko Replenish Med Spa,elkoreplenishmedspa.com,https://elkoreplenishmedspa.com/,Elko,NV,elkoreplenishmedspa@gmail.com,B_unconfirmed,https://elkoreplenishmedspa.com/contact/,yes,,new_with_email,northern_nv
+Elite Health & Wellness Elko,elitehealthelko.com,https://www.elitehealthelko.com/,Elko,NV,elitehealthelko@gmail.com,B_unconfirmed,https://www.elitehealthelko.com/contact,yes,,new_with_email,northern_nv
+Ascension Health,ascensionhealthnv.com,https://ascensionhealthnv.com/,Fernley,NV,,,,,,new_no_email,northern_nv
+Enliven Medical Spa and Wellness Center,enlivenwellnessmedspa.com,https://enlivenwellnessmedspa.com/,Mesquite,NV,,,,,,new_no_email,northern_nv
+Enhanced Aesthetics & Wellness,enhanced-aw.com,https://www.enhanced-aw.com/,Pahrump,NV,Info@aestheticenhancements.online,A_verified,https://www.enhanced-aw.com/contact/,yes,,new_with_email,northern_nv
+Elite Health & Wellness,theelitehealth.com,https://theelitehealth.com/,Boulder City,NV,info@theelitehealth.com,B_unconfirmed,https://theelitehealth.com/contact/,,,new_with_email,northern_nv
+Optimal Well MD,optimalwellmd.com,https://optimalwellmd.com/,Virginia Beach,VA,hello@optimalwellmd.com,B_unconfirmed,https://www.optimalwellmd.com/contact/,,,new_with_email,va_nj_ct
+Fountain of You MD,fountainofyoumd.com,https://fountainofyoumd.com/,Virginia Beach,VA,info@fountainofyoumd.com,B_unconfirmed,https://fountainofyoumd.com/contact/,,,new_with_email,va_nj_ct
+Sunshine Health DPC,sunshinehealthdpc.com,https://sunshinehealthdpc.com/,Virginia Beach,VA,info@sunshinehealthdpc.com,B_unconfirmed,https://sunshinehealthdpc.com/contact-us/,,,new_with_email,va_nj_ct
+Salt Spa & Wellness Center,vbsaltspa.com,https://vbsaltspa.com/,Virginia Beach,VA,,,,,,new_no_email,va_nj_ct
+Riva MedSpa,rivamedspa.com,https://rivamedspa.com/,Virginia Beach,VA,,,,,,new_no_email,va_nj_ct
+Venture Wellness RVA,venturewellnessrva.com,https://venturewellnessrva.com/,Midlothian,VA,info@venturewellnessrva.com,B_unconfirmed,https://venturewellnessrva.com/contact-us/,,,new_with_email,va_nj_ct
+RVA Revive,rvarevive.com,https://rvarevive.com/,Glen Allen,VA,contact@rvarevive.com,B_unconfirmed,https://rvarevive.com/contact/,,,new_with_email,va_nj_ct
+Moke Aesthetics,mokeaesthetics.com,https://mokeaesthetics.com/,Henrico,VA,kirsten@mokeaesthetics.com,A_verified,https://www.mokeaesthetics.com/contact,,,new_with_email,va_nj_ct
+Regenerate Richmond,regeneraterichmond.com,https://regeneraterichmond.com/,Richmond,VA,,,,,,new_no_email,va_nj_ct
+Vita Pure IV,vitapureinfusions.com,https://vitapureinfusions.com/,Richmond,VA,,,,,,new_no_email,va_nj_ct
+Lucid Med Spa,lucid-medspa.com,https://lucid-medspa.com/,Glen Allen,VA,,,,,,new_no_email,va_nj_ct
+Dermlounge,dermlounge.com,https://dermlounge.com/,Richmond,VA,,,,,,new_no_email,va_nj_ct
+Richmond Aesthetic Weight Loss,weightlossclinicrichmond.com,https://weightlossclinicrichmond.com/,Richmond,VA,,,,,,new_no_email,va_nj_ct
+Richmond Plastic Surgery,richmondplasticsurgery.com,https://richmondplasticsurgery.com/,Richmond,VA,,,,,,new_no_email,va_nj_ct
+Neil Zemmel MD,drneilzemmel.com,https://drneilzemmel.com/,Richmond,VA,,,,,,new_no_email,va_nj_ct
+Sage Vine Aesthetics,sagevineaesthetics.com,https://sagevineaesthetics.com/,Mechanicsville,VA,,,,,,new_no_email,va_nj_ct
+Advanced Aesthetics USA,advancedaestheticsusa.com,https://advancedaestheticsusa.com/,Richmond,VA,,,,,,new_no_email,va_nj_ct
+ProMD Health Arlington,promdhealth.com,https://promdhealth.com/,Arlington,VA,consults@promdhealth.com,A_verified,https://promdhealth.com/contact/,,,do_not_contact,va_nj_ct
+RxWellness Aesthetics & Anti-Aging,rxwellnessmedspa.com,https://rxwellnessmedspa.com/,Arlington,VA,Request-medspa@rxwellness.com,A_verified,https://www.rxwellnessmedspa.com/contact-us/,yes,,new_with_email,va_nj_ct
+NOVA Concierge Medicine & Aesthetics,novaconciergemed.com,https://novaconciergemed.com/,Arlington,VA,info@novacma.com,A_verified,https://novaconciergemed.com/contact-us/,yes,,new_with_email,va_nj_ct
+Evexia Medspa,evexiamedspa.com,https://evexiamedspa.com/,McLean,VA,evexia@evexiamedspa.com,A_verified,https://evexiamedspa.com/contact-us/,,,already_in_queue,va_nj_ct
+Harmonie Aesthetics,harmoniemedspa.com,https://harmoniemedspa.com/,Fairfax,VA,,,,,,new_no_email,va_nj_ct
+Institute for Hormonal Balance,donovitz.com,https://donovitz.com/,Arlington,VA,,,,,,new_no_email,va_nj_ct
+Elevera Health,eleverahealth.com,https://eleverahealth.com/,Arlington,VA,,,,,,new_no_email,va_nj_ct
+Bare Beauty VA,barebeautyva.com,https://barebeautyva.com/,Alexandria,VA,,,,,,new_no_email,va_nj_ct
+Weight Loss and Vitality,weightlossandvitality.com,https://weightlossandvitality.com/,Alexandria,VA,,,,,,new_no_email,va_nj_ct
+Peak by MD,peakbymd.com,https://peakbymd.com/,Jersey City,NJ,info@peakbymd.com,B_unconfirmed,https://peakbymd.com/contact/,,,new_with_email,va_nj_ct
+Downtown Medspa,downtownmedspa.com,https://downtownmedspa.com/,Jersey City,NJ,marietta@downtownmedspa.com,A_verified,https://www.downtownmedspa.com/contactus,,,new_with_email,va_nj_ct
+Ethos Aesthetics + Wellness,myethosspa.com,https://myethosspa.com/,Hoboken,NJ,info@myethosspa.com,B_unconfirmed,https://myethosspa.com/contact/,,,new_with_email,va_nj_ct
+1Aesthetic,1aesthetic.com,https://1aesthetic.com/,Hoboken,NJ,skingoods@yahoo.com,A_verified,https://1aesthetic.com/contact-us/,yes,,new_with_email,va_nj_ct
+The Aesthetic Concierge,theaestheticconcierge.co,https://theaestheticconcierge.co/,Hoboken,NJ,,,,,,do_not_contact,va_nj_ct
+Hormone and Weight Loss Doctors NJ,hormoneweightlossdoctorsnj.com,https://hormoneweightlossdoctorsnj.com/,Newark,NJ,,,,,,new_no_email,va_nj_ct
+NJ Health & Wellness,njhwllc.com,https://njhwllc.com/,Newark,NJ,,,,,,new_no_email,va_nj_ct
+Age Well MD,agewellmdnj.com,https://agewellmdnj.com/,Livingston,NJ,,,,,,new_no_email,va_nj_ct
+New Jersey Functional Medicine,newjerseyfunctionalmed.com,https://newjerseyfunctionalmed.com/,Florham Park,NJ,,,,,,new_no_email,va_nj_ct
+Iorio Plastic Surgery & Medspa,iorioplasticsurgery.com,https://iorioplasticsurgery.com/,Nutley,NJ,,,,,,new_no_email,va_nj_ct
+Arora MD Spa,aroramdspa.com,https://aroramdspa.com/,East Brunswick,NJ,,,,,,new_no_email,va_nj_ct
+Greenwich MD,greenwich-md.com,https://greenwich-md.com/,Stamford,CT,drquerido@greenwich-md.com,A_verified,https://greenwich-md.com/contact-us/,,,new_with_email,va_nj_ct
+Serotonin Centers Stamford,serotonincenters.com,https://serotonincenters.com/,Stamford,CT,ContactUs@serotonincenters.com,A_verified,https://www.serotonincenters.com/stamford/contact/,,,new_with_email,va_nj_ct
+Dr. Sobo Holistic Medicine,drsobo.com,https://drsobo.com/,Stamford,CT,optimalhealth@optonline.net,A_verified,https://drsobo.com/contact,yes,,new_with_email,va_nj_ct
+Integrated Health Alliance,integratedhealthall.com,https://integratedhealthall.com/,Stamford,CT,,,,,,new_no_email,va_nj_ct
+Refreshed Medical Aesthetics,refreshedmed.com,https://refreshedmed.com/,West Hartford,CT,refreshedmedical@gmail.com,B_unconfirmed,https://www.refreshedmed.com/about-us,yes,,new_with_email,va_nj_ct
+CT Medical Weight Loss & Beyond,ctmedweightloss.com,https://ctmedweightloss.com/,Glastonbury,CT,Glastonbury@CTMedWeightloss.com,A_verified,https://ctmedweightloss.com/contact/,,,new_with_email,va_nj_ct
+Greenwich Medical Spa,greenwichmedicalspa.com,https://greenwichmedicalspa.com/,West Hartford,CT,,,,,,already_in_queue,va_nj_ct
+Glastonbury MedSpa (Dr. Beam),doctorbeam.com,https://doctorbeam.com/,Glastonbury,CT,,,,,,new_no_email,va_nj_ct
+Glowlight Med Spa,glowlightmedspa.com,https://glowlightmedspa.com/,Bellevue,WA,contact@glowlightmedspa.com,B_unconfirmed,https://glowlightmedspa.com/contact-us/,,,new_with_email,wa_or_mn
+Seattle Plastic Surgery,seattleplasticsurgery.com,https://seattleplasticsurgery.com/,Seattle,WA,,,,,,new_no_email,wa_or_mn
+Allen Medical Aesthetics,allenmedicalaesthetics.com,https://allenmedicalaesthetics.com/,Des Moines,WA,frontdesk@allenmedicalaesthetics.com,A_verified,https://allenmedicalaesthetics.com/contact/,,,new_with_email,wa_or_mn
+Rejuve Medspa,rejuvemedicalspa.com,https://rejuvemedicalspa.com/,Newcastle,WA,,,,,,new_no_email,wa_or_mn
+Rise Regenerative Medicine,riseregenmed.com,https://riseregenmed.com/,Seattle,WA,hello@riseregenmed.com,B_unconfirmed,https://riseregenmed.com/,,,new_with_email,wa_or_mn
+Celsius Med Spa Seattle,celsiusmedspa.com,https://celsiusmedspa.com/,Seattle,WA,,,,,,new_no_email,wa_or_mn
+Natural Rejuvenation Med Spa,naturalrejuvenationmedspa.com,https://naturalrejuvenationmedspa.com/,Bellevue,WA,info@naturalrejuvenationmedspa.com,B_unconfirmed,https://naturalrejuvenationmedspa.com/contact/,,,new_with_email,wa_or_mn
+Apex Health & Wellness,apex-healthwellness.com,https://apex-healthwellness.com/,Bellevue,WA,contact@apex-healthwellness.com,B_unconfirmed,https://www.apex-healthwellness.com/contact,,,new_with_email,wa_or_mn
+Axis Stem Cell Institute,axisstemcell.com,https://axisstemcell.com/,Kirkland,WA,Info@AxisStemCell.com,B_unconfirmed,https://www.axisstemcell.com/contact/,,,already_in_queue,wa_or_mn
+Next Health Bellevue,next-health.com,https://next-health.com/,Bellevue,WA,franchise@next-health.com,A_verified,https://www.next-health.com/contact-us,,franchise_hq,do_not_contact,wa_or_mn
+The Lab Aesthetics & Wellness,thelabaw.com,https://thelabaw.com/,Spokane Valley,WA,Aaron@thelabaw.com,A_verified,https://www.thelabaw.com/contact,,,new_with_email,wa_or_mn
+Susan Ashley MD Healthy Living,susanashleymd.com,https://susanashleymd.com/,Liberty Lake,WA,,,,,,new_no_email,wa_or_mn
+Prime Body Solutions,primebodysolutions.com,https://primebodysolutions.com/,Liberty Lake,WA,,,,,,new_no_email,wa_or_mn
+Stryker Optimal Health & Wellness,strykerwellness.com,https://strykerwellness.com/,Spokane Valley,WA,contact@strykerwellness.com,B_unconfirmed,https://www.strykerwellness.com/,,,new_with_email,wa_or_mn
+Complete Wellness & Aesthetics,completewellnessnw.com,https://completewellnessnw.com/,Spokane Valley,WA,inquiry@completemedicalspokane.com,A_verified,https://completewellnessnw.com/contact-us/,yes,,new_with_email,wa_or_mn
+SALT Hydration & Wellness,salthydrationandwellness.com,https://salthydrationandwellness.com/,Portland,OR,info@salthw.com,A_verified,https://www.salthydrationandwellness.com/contact-us,yes,mobile_multistate,new_with_email,wa_or_mn
+Apres Plastic Surgery,apresplasticsurgery.com,https://apresplasticsurgery.com/,Portland,OR,draghayan@apresplasticsurgery.com,A_verified,https://www.apresplasticsurgery.com/contact/,,,new_with_email,wa_or_mn
+Thrive Aesthetic & Wellness,thriveportland.com,https://thriveportland.com/,Portland,OR,,,,,,new_no_email,wa_or_mn
+Aura Aesthetics,aurapdx.com,https://aurapdx.com/,Portland,OR,hello@aurapdx.com,B_unconfirmed,https://www.aurapdx.com/contact,,,new_with_email,wa_or_mn
+SANTE Aesthetics & Wellness,santepdx.com,https://santepdx.com/,Portland,OR,info@santepdx.com,B_unconfirmed,https://santepdx.com/contact-us/,,,do_not_contact,wa_or_mn
+Gorin Plastic Surgery & Medspa,gorinplasticsurgery.com,https://gorinplasticsurgery.com/,Tualatin,OR,,,,,,new_no_email,wa_or_mn
+Cosmetiq Medicine,cosmetiqmedicine.com,https://cosmetiqmedicine.com/,Portland,OR,CosmetiqMedicine@gmail.com,B_unconfirmed,https://cosmetiqmedicine.com/contact-us/,yes,,new_with_email,wa_or_mn
+Portland Plastic Surgery Group,portlandplasticsurgerygroup.com,https://portlandplasticsurgerygroup.com/,Portland,OR,,,,,,new_no_email,wa_or_mn
+Fresh Faces RX,freshfacesrx.com,https://freshfacesrx.com/,Portland,OR,info@freshfacesrx.com,B_unconfirmed,https://freshfacesrx.com/,,,new_with_email,wa_or_mn
+Infinite Youth Medical Spa,infiniteyouthmedical.com,https://infiniteyouthmedical.com/,Minnetonka,MN,,,,,,do_not_contact,wa_or_mn
+Spa MD,spamd.net,https://spamd.net/,St. Paul,MN,,,,,,new_no_email,wa_or_mn
+Lite Medical,litemedicalclinic.com,https://litemedicalclinic.com/,Edina,MN,,,,,,do_not_contact,wa_or_mn
+Relive Health Minnetonka,relivehealth.com,https://relivehealth.com/,Minnetonka,MN,marketing@relivehealth.com,A_verified,https://relivehealth.com/minnetonka-mn/contact/,,franchise_hq,new_with_email,wa_or_mn
+Viva Vitality MN,vivavitalitymn.com,https://vivavitalitymn.com/,St. Paul,MN,contact@vivavitalitymn.com,B_unconfirmed,https://www.vivavitalitymn.com/contact/,,,new_with_email,wa_or_mn
+Livly Wellness,livlywellness.com,https://livlywellness.com/,St. Paul,MN,info@livlywellness.com,B_unconfirmed,https://livlywellness.com/about-livly-wellness,,,new_with_email,wa_or_mn
+LX Medical,lx-medical.com,https://lx-medical.com/,Edina,MN,info@lx-medical.com,B_unconfirmed,https://lx-medical.com/contact/,,,new_with_email,wa_or_mn
+HyperCharge Health,hyperchargehealth.com,https://hyperchargehealth.com/,Edina,MN,info@hyperchargehealth.com,B_unconfirmed,https://www.hyperchargehealth.com/contact,,,new_with_email,wa_or_mn
+Be Your Kind,beyourkind.com,https://beyourkind.com/,Edina,MN,hello@beyourkind.com,B_unconfirmed,https://beyourkind.com/contact,,,new_with_email,wa_or_mn
+evoyouthful,evoyouthful.com,https://evoyouthful.com/,Wayzata,MN,evoyouthfulinfo@gmail.com,B_unconfirmed,https://evoyouthful.com/contact,yes,,new_with_email,wa_or_mn
+Piqure Aesthetics,piqurenashville.com,https://piqurenashville.com/,Nashville,TN,,,,,,new_no_email,tn_al_sc
+VIP Weight Loss Anti-Aging & Quick Care,vipweightlosscenters.com,https://vipweightlosscenters.com/,Nashville,TN,office@vipweightlosscenters.com,A_verified,https://vipweightlosscenters.com/contact/,,,do_not_contact,tn_al_sc
+Amalie Aesthetics,amalieaesthetics.com,https://amalieaesthetics.com/,Nashville,TN,,,,,,do_not_contact,tn_al_sc
+Care Nashville,carenashville.com,https://carenashville.com/,Brentwood,TN,info@carenashville.com,B_unconfirmed,https://carenashville.com/contact-us/,,,new_with_email,tn_al_sc
+Nashville Hormone & Integrative Medicine,nashvillehormone.com,https://nashvillehormone.com/,Nashville,TN,info@nashvillehormone.com,B_unconfirmed,https://nashvillehormone.com/,,,new_with_email,tn_al_sc
+Toxxology Med Spa,toxxology.com,https://toxxology.com/,Nashville,TN,Service@toxxology.com,A_verified,https://www.toxxology.com/about-us,,,new_with_email,tn_al_sc
+A Prestige Aesthetics & Wellness,aprestigeaesthetics.com,https://aprestigeaesthetics.com/,Franklin,TN,info@aprestigeaesthetics.com,B_unconfirmed,https://aprestigeaesthetics.com/contact-us/,,,new_with_email,tn_al_sc
+Body Works,bodyworkstn.com,https://bodyworkstn.com/,Franklin,TN,info@bodyworksfranklin.com,A_verified,https://bodyworkstn.com/contact-us/,yes,,new_with_email,tn_al_sc
+REGEN Society Aesthetics + Wellness,regensocietyaesthetics.com,https://regensocietyaesthetics.com/,Brentwood,TN,regensocietyaesthetics@gmail.com,B_unconfirmed,https://www.regensocietyaesthetics.com/location-hours,yes,,new_with_email,tn_al_sc
+The Beaumont Med Spa,thebeaumontmedspa.com,https://thebeaumontmedspa.com/,Lebanon,TN,info@thebeaumontmedspa.com,B_unconfirmed,https://www.thebeaumontmedspa.com/,,,new_with_email,tn_al_sc
+Howard Aubert MD,drhowardaubert.com,https://drhowardaubert.com/,Brentwood,TN,,,,,,new_no_email,tn_al_sc
+Elite Total Wellness,elitememphis.com,https://elitememphis.com/,Memphis,TN,elitetotalwellness@gmail.com,B_unconfirmed,https://elitememphis.com/contact/,yes,,new_with_email,tn_al_sc
+Wellness One Memphis PC,memphispeptidetherapy.com,https://memphispeptidetherapy.com/,Memphis,TN,,,,,,new_no_email,tn_al_sc
+Sneed MediSpa & Wellness,sneedmedispa.com,https://sneedmedispa.com/,Memphis,TN,sneedmedspa@gmail.com,A_verified,https://www.sneedmedispa.com/contact/,yes,,new_with_email,tn_al_sc
+Vitality Wellness & Aesthetics of Collierville,vitalitycollierville.com,https://vitalitycollierville.com/,Collierville,TN,,,,,,new_no_email,tn_al_sc
+Germantown Aesthetics,germantownaesthetics.com,https://germantownaesthetics.com/,Germantown,TN,,,,,,new_no_email,tn_al_sc
+Adorn Aesthetics,adornaestheticsmemphis.com,https://adornaestheticsmemphis.com/,Cordova,TN,contact@adornaestheticsmemphis.com,B_unconfirmed,https://adornaestheticsmemphis.com/contact,,,new_with_email,tn_al_sc
+A Beautiful You Medical Spa,abeautifulyoumedicalspa.com,https://abeautifulyoumedicalspa.com/,Memphis,TN,clientservices@abeautifulyoumedicalspa.com,A_verified,https://www.abeautifulyoumedicalspa.com/contact/,,,new_with_email,tn_al_sc
+Ageless Medical Spa,agelessmedicalspa.com,https://agelessmedicalspa.com/,Knoxville,TN,,,,,,new_no_email,tn_al_sc
+GLOW Medical Aesthetics Weight Loss & Wellness,glowmed.com,https://glowmed.com/,Powell,TN,glowmed@ymail.com,B_unconfirmed,https://www.glowmed.com/contact-us/,yes,,new_with_email,tn_al_sc
+Medispa At Choto,medispachoto.com,https://medispachoto.com/,Knoxville,TN,book@medispachoto.com,A_verified,https://medispachoto.com/contact,,,new_with_email,tn_al_sc
+Beautique Medical Anti-Aging,beautiquebeautiful.com,https://beautiquebeautiful.com/,Knoxville,TN,beautiqueteam@gmail.com,A_verified,https://beautiquebeautiful.com/contact/,yes,,new_with_email,tn_al_sc
+Sarah Hitchcox Aesthetics,hitchcoxaesthetics.com,https://hitchcoxaesthetics.com/,Knoxville,TN,sarah@hitchcoxaesthetics.com,A_verified,https://hitchcoxaesthetics.com/,,,new_with_email,tn_al_sc
+RevitalyzeMD,revitalyzemd.com,https://revitalyzemd.com/,Knoxville,TN,connect@revitalyzemd.com,A_verified,https://www.revitalyzemd.com/contact/,,,new_with_email,tn_al_sc
+Knoxville Weight Loss and Wellness,knoxvilleweightlossandwellness.com,https://knoxvilleweightlossandwellness.com/,Knoxville,TN,sales@knoxvilleweightlossandwellness.com,A_verified,https://www.knoxvilleweightlossandwellness.com/,,,new_with_email,tn_al_sc
+Weight Loss Knox,weightlossknoxvilletn.com,https://weightlossknoxvilletn.com/,Knoxville,TN,info@weightlossknoxvilletn.com,B_unconfirmed,https://weightlossknoxvilletn.com/contact/,,,new_with_email,tn_al_sc
+Haus of Beauty Medical & Aesthetics,hausofbeautybhm.com,https://hausofbeautybhm.com/,Homewood,AL,hausofbeautybhm@gmail.com,B_unconfirmed,https://hausofbeautybhm.com/contact-us,yes,,new_with_email,tn_al_sc
+Smart Skin Med Spa,smartskinmedspa.com,https://smartskinmedspa.com/,Homewood,AL,ssmedspa@yahoo.com,A_verified,https://smartskinmedspa.com/contact-smart-skin-med-spa-in-birmingham-al/,yes,,new_with_email,tn_al_sc
+Infinity Med-I-Spa,med-i-spa.com,https://med-i-spa.com/,Birmingham,AL,infinitymedispa.al@gmail.com,B_unconfirmed,https://med-i-spa.com/contact/,yes,,new_with_email,tn_al_sc
+Vitalogy Wellness Center & Med-Spa,vitalogywellness.com,https://vitalogywellness.com/,Homewood,AL,rsvp@vitalogywellness.com,A_verified,https://vitalogywellness.com/contact/,,,new_with_email,tn_al_sc
+Practice Health LLC,practicehealthbham.com,https://practicehealthbham.com/,Birmingham,AL,Casey@Practicehealthbham.com,A_verified,https://practicehealthbham.com/,,,new_with_email,tn_al_sc
+Portico Longevity,porticolongevity.com,https://porticolongevity.com/,Charleston,SC,hello@porticolongevity.com,B_unconfirmed,https://www.porticolongevity.com/contact,,,new_with_email,tn_al_sc
+InterveneMD,intervenemd.com,https://intervenemd.com/,Mount Pleasant,SC,,,,,,new_no_email,tn_al_sc
+Totality MediSpa,totalitymed.com,https://totalitymed.com/,Charleston,SC,info@totalitymed.com,B_unconfirmed,https://totalitymed.com/contact-us,,,new_with_email,tn_al_sc
+Solcara Health,solcarahealth.com,https://solcarahealth.com/,Mount Pleasant,SC,info@solcarahealth.com,B_unconfirmed,https://www.solcarahealth.com/contact,,,new_with_email,tn_al_sc
+Center for Occupational & Environmental Medicine,coem.com,https://coem.com/,North Charleston,SC,triage@coem.com,A_verified,https://coem.com/,,not_a_medspa,new_with_email,tn_al_sc
+The Wellness Loft,wellness-loft.com,https://wellness-loft.com/,Charleston,SC,,,,,,new_no_email,tn_al_sc
+Charleston HealthSpan Institute,charlestonhealthspan.com,https://charlestonhealthspan.com/,Daniel Island,SC,info@charlestonhealthspan.com,B_unconfirmed,https://charlestonhealthspan.com/contact/message/,,,new_with_email,tn_al_sc
+Palmetto Weight Management & Internal Medicine,palmettoweightmanagement.com,https://palmettoweightmanagement.com/,Charleston,SC,,,,,,new_no_email,tn_al_sc
+Perform Medical,perform-med.com,https://perform-med.com/,Summerville,SC,info@perform-med.com,B_unconfirmed,https://perform-med.com/contact-us/,,,new_with_email,tn_al_sc
+CHS Charleston Hormone Services,chshormone.com,https://chshormone.com/,Mount Pleasant,SC,patients@chshormone.com,A_verified,https://chshormone.com/,,,new_with_email,tn_al_sc
+Galen Healthcare & Aesthetics,galenhealthcaresc.com,https://galenhealthcaresc.com/,Greer,SC,info@galenhealthcaresc.com,B_unconfirmed,https://galenhealthcaresc.com/contact/,,,new_with_email,tn_al_sc
+Biltmore Restorative Medicine & Aesthetics,biltmorerestorativemedicine.com,https://biltmorerestorativemedicine.com/,Greenville,SC,info@biltmorerestorativemedicine.com,B_unconfirmed,https://www.biltmorerestorativemedicine.com/contact-us/,,,new_with_email,tn_al_sc
+PUSH Med IV Lounge,thepushmed.com,https://thepushmed.com/,Greenville,SC,Info@thepushmed.com,B_unconfirmed,https://www.thepushmed.com/,,,new_with_email,tn_al_sc
+OptimalSelf MD,optimalselfmd.com,https://optimalselfmd.com/,Greenville,SC,office@optimalselfmd.com,A_verified,https://www.optimalselfmd.com/contact-us/,,,new_with_email,tn_al_sc
+Elite Body & Laser,elitebodyandlaser.com,https://elitebodyandlaser.com/,Columbus,OH,info@elitebodyandlaser.com,B_unconfirmed,https://elitebodyandlaser.com/contact/,,,new_with_email,oh_pa
+Medela Amor,medelaamor.com,https://medelaamor.com/,Columbus,OH,,,,,,new_no_email,oh_pa
+Hydrate Me Med Spa,hydratememedspa.com,https://hydratememedspa.com/,Shawnee Hills,OH,,,,,,new_no_email,oh_pa
+Ideal Weight Loss & Cosmetic Centers,slimmerimage.com,https://slimmerimage.com/,Reynoldsburg,OH,admin@slimmerimage.com,A_verified,https://www.slimmerimage.com/contact-us,,,new_with_email,oh_pa
+Endocrinology Associates,endocrinology-associates.com,https://endocrinology-associates.com/,Columbus,OH,research@endocrinology-associates.com,A_verified,https://endocrinology-associates.com/contact-us/,,,new_with_email,oh_pa
+Polaris Rejuvenation,polarisrejuvenation.com,https://polarisrejuvenation.com/,Dublin,OH,info@polarisrejuvenation.com,B_unconfirmed,https://polarisrejuvenation.com/contact,,,do_not_contact,oh_pa
+Impact Health & Wellness,impacthealthoh.com,https://impacthealthoh.com/,Westerville,OH,info@ihwoh.com,A_verified,https://impacthealthoh.com/contact-us/,yes,,new_with_email,oh_pa
+The Confidence Lab,myconfidencelab.com,https://myconfidencelab.com/,Powell,OH,info@myconfidencelab.com,B_unconfirmed,https://www.myconfidencelab.com/contact-us,,,new_with_email,oh_pa
+Buckeye Physical Medicine & Rehab,buckeyepmr.com,https://buckeyepmr.com/,Grove City,OH,contact@buckeyepmr.com,B_unconfirmed,https://www.buckeyepmr.com/email,,,new_with_email,oh_pa
+Revive Wellness and Beauty,revivepowell.com,https://revivepowell.com/,Powell,OH,,,,,,new_no_email,oh_pa
+Jiva Med Spa,jivamedspa.com,https://jivamedspa.com/,Columbus,OH,info@jivamedspa.com,B_unconfirmed,https://jivamedspa.com/contact-us/,,,new_with_email,oh_pa
+Wellness Center of Greater Cleveland,wellnesscentercleveland.com,https://wellnesscentercleveland.com/,North Olmsted,OH,wellnesscentercleveland@gmail.com,B_unconfirmed,https://wellnesscentercleveland.com/contact/,yes,,new_with_email,oh_pa
+Mentor Plastic Surgery & MedSpa,mentorplasticsurgery.com,https://mentorplasticsurgery.com/,Mentor,OH,info@mentorplasticsurgery.com,B_unconfirmed,https://mentorplasticsurgery.com/contact-us/,,,new_with_email,oh_pa
+Euro Look Medical Spa,eurolookmedspa.com,https://eurolookmedspa.com/,Solon,OH,info@eurolookmedspa.com,B_unconfirmed,https://eurolookmedspa.com/contact/,,,new_with_email,oh_pa
+Grace + Beauty Medical Spa,gracebeautymedspa.com,https://gracebeautymedspa.com/,Westlake,OH,info@gracebeautymedspa.com,B_unconfirmed,https://www.gracebeautymedspa.com/contact-us/,,,new_with_email,oh_pa
+Confidence Med-Spa,confidencemedspa.com,https://confidencemedspa.com/,Lakewood,OH,confidencemedspa@gmail.com,B_unconfirmed,https://confidencemedspa.com/,yes,,new_with_email,oh_pa
+The Wrinkle Room Med Spa,wrinkleroommedspa.com,https://wrinkleroommedspa.com/,Highland Heights,OH,thewrinkleroomllc@gmail.com,A_verified,https://wrinkleroommedspa.com/semaglutide-and-tirzepatide,yes,,new_with_email,oh_pa
+Advanced Womens Health & Surgery,clevelandgyn.com,https://clevelandgyn.com/,Westlake,OH,clevelandgyn@gmail.com,B_unconfirmed,https://clevelandgyn.com/contact-us/,yes,,new_with_email,oh_pa
+Apex Dermatology & Skin Surgery Center,apexskin.com,https://apexskin.com/,Mayfield Heights,OH,info@apexskin.com,B_unconfirmed,https://www.apexskin.com/contact/,,multi_site_group,new_with_email,oh_pa
+Prema Med Spa,premamedspa.com,https://premamedspa.com/,Beachwood,OH,info@premamedspa.com,B_unconfirmed,https://premamedspa.com/contact-us/,,,new_with_email,oh_pa
+Amy Brenner MD & Associates,dramybrenner.com,https://dramybrenner.com/,Mason,OH,contact@dramybrenner.com,B_unconfirmed,https://dramybrenner.com/contact/,,,new_with_email,oh_pa
+RestoreMD,restoremd.life,https://restoremd.life/,Lebanon,OH,,,,,,new_no_email,oh_pa
+A Touch of Energy Wellness,atouchofenergywellness.com,https://atouchofenergywellness.com/,Cincinnati,OH,,,,,,new_no_email,oh_pa
+CaptivatingU Med Spa,captivatingumedspa.com,https://captivatingumedspa.com/,West Chester,OH,captivatingumedspa@outlook.com,B_unconfirmed,https://captivatingumedspa.com/contact-us/,yes,,new_with_email,oh_pa
+Elite Medicine Ohio,elitemedicineohio.com,https://elitemedicineohio.com/,West Chester,OH,,,,,,new_no_email,oh_pa
+Victory Wellness & Medspa,victorywellness.com,https://victorywellness.com/,Milford,OH,victory@apsiwellness.com,A_verified,https://victorywellness.com/contact/,yes,,new_with_email,oh_pa
+Advanced Aesthetics Group,advancedaestheticscinci.com,https://advancedaestheticscinci.com/,Montgomery,OH,office@advancedaestheticscinci.com,A_verified,https://www.advancedaestheticscinci.com/,,,new_with_email,oh_pa
+Enigma Medi Spa & Laser Center,enigmamedispa.com,https://enigmamedispa.com/,Philadelphia,PA,enigmamedispa@gmail.com,B_unconfirmed,https://enigmamedispa.com/rh/contacts,yes,,new_with_email,oh_pa
+Subbio Plastic Surgery,drsubbio.com,https://drsubbio.com/,Newtown Square,PA,info@drsubbio.com,B_unconfirmed,https://www.drsubbio.com/,,,new_with_email,oh_pa
+StarkMD Plastic Surgery,starkmdplasticsurgery.com,https://starkmdplasticsurgery.com/,Bryn Mawr,PA,,,,,,new_no_email,oh_pa
+Revive Medical,revivephilly.com,https://revivephilly.com/,Philadelphia,PA,info@revivephilly.com,B_unconfirmed,https://www.revivephilly.com/contact-us/,,,new_with_email,oh_pa
+Fishtown Medicine,fishtownmedicine.com,https://fishtownmedicine.com/,Philadelphia,PA,hello@fishtownmedicine.com,B_unconfirmed,https://www.fishtownmedicine.com/contact,,,new_with_email,oh_pa
+The Falcone Center,drvictoriafalcone.com,https://drvictoriafalcone.com/,Bala Cynwyd,PA,info@falconecenter.com,A_verified,https://drvictoriafalcone.com/contact/,yes,,new_with_email,oh_pa
+Dr. Robert Fortino Weight Loss,drfortino.net,https://drfortino.net/,Philadelphia,PA,info@drfortino.com,B_unconfirmed,https://drfortino.net/contact/,yes,,new_with_email,oh_pa
+Bryn Mawr Plastic Surgery,drjohnleesurgery.com,https://drjohnleesurgery.com/,Bryn Mawr,PA,staff@luxskinlasers.com,A_verified,https://www.drjohnleesurgery.com/contact-us/,yes,,new_with_email,oh_pa
+Philadelphia Medical Group,philamedgroup.com,https://philamedgroup.com/,Philadelphia,PA,,,,,,new_no_email,oh_pa
+Philly IV Lounge,phillyiv.com,https://phillyiv.com/,Philadelphia,PA,contact@phillyiv.com,B_unconfirmed,https://phillyiv.com/contact/,,,new_with_email,oh_pa
+Philly Anti Aging,phillyantiaging.com,https://phillyantiaging.com/,Philadelphia,PA,,,,,,do_not_contact,oh_pa
+Philly Wellness Center,phillywellnesscenter.com,https://phillywellnesscenter.com/,Philadelphia,PA,,,,,,new_no_email,oh_pa
+Body+Beauty Lab,bodyandbeautylab.com,https://bodyandbeautylab.com/,Radnor,PA,customerservice@bodyandbeauty.com,A_verified,https://bodyandbeautylab.com/contact-us/,yes,source_domain_uncertain,new_with_email,oh_pa
+Main Line Plastic Surgery,mainlineplasticsurgery.com,https://mainlineplasticsurgery.com/,Bryn Mawr,PA,mainlineplasticsurgery@gmail.com,B_unconfirmed,https://mainlineplasticsurgery.com/contact-us/,yes,,new_with_email,oh_pa
+Dr. Hormone MD,drhormonemd.com,https://drhormonemd.com/,King of Prussia,PA,info@drhormonemd.com,B_unconfirmed,https://drhormonemd.com/contact,,,new_with_email,oh_pa
+Aetheria Aesthetics & Wellness,aetheriaaesthetics.com,https://aetheriaaesthetics.com/,Pittsburgh,PA,info@aetheriaaesthetics.com,B_unconfirmed,https://www.aetheriaaesthetics.com/contact/,,,new_with_email,oh_pa
+Pittsburgh Center for Plastic Surgery,pittsburghplasticsurgery.com,https://pittsburghplasticsurgery.com/,Pittsburgh,PA,info@pghplasticsurgery.com,A_verified,https://www.pittsburghplasticsurgery.com/contact/,yes,,new_with_email,oh_pa
+The IV Center,theivcenter.net,https://theivcenter.net/,Monroeville,PA,,,,,,new_no_email,oh_pa
+InVigorate Med Spa,invigoratemedspa.com,https://invigoratemedspa.com/,Pittsburgh,PA,,,,,,new_no_email,oh_pa
+Aeternus Weight Loss & Wellness,aeternuslifestyle.com,https://aeternuslifestyle.com/,Pittsburgh,PA,info@aeternuslifestyle.com,B_unconfirmed,https://aeternuslifestyle.com/contact/,,,new_with_email,oh_pa
+Gentle Beauty Solutions,gentlebeautysolutions.com,https://gentlebeautysolutions.com/,Pittsburgh,PA,,,,,,new_no_email,oh_pa
